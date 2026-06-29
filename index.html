@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Mehedi Hasan — RFID & Digital Twin Researcher</title>
+<meta name="description" content="MD Mehedi Hasan — Graduate Researcher at Saga University, Japan. RFID-based Digital Twin systems for emergency department resource management in resource-constrained healthcare settings.">
+<meta name="keywords" content="MD Mehedi Hasan, RFID, Digital Twin, Healthcare Informatics, Emergency Department, MATLAB, Unity 3D, Bangladesh, Saga University, PhD">
+<meta name="author" content="MD Mehedi Hasan">
+<meta property="og:title" content="MD Mehedi Hasan — RFID & Digital Twin Researcher">
+<meta property="og:description" content="Graduate Researcher at Saga University developing RFID-based Digital Twin systems for emergency department resource management in Bangladesh hospitals.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mhudoy11.github.io">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MD Mehedi Hasan — Researcher">
+<meta name="twitter:description" content="RFID & Digital Twin Researcher, Saga University Japan">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--teal:#00C9B1;--teal2:#00A896;
+  --bg:#F7F9FC;--white:#FFFFFF;--slate:#374151;
+  --mid:#6B7280;--light:#E5E7EB;--vlgray:#9CA3AF;
+  --published:#166534;--inpress:#1565C0;
+  --review:#92400E;--inprep:#1D4ED8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--slate);line-height:1.65;font-size:15px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(27,42,74,0.97);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:0 2rem;height:56px}
+.nav-name{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--white);letter-spacing:.02em}
+.nav-links{display:flex;gap:1.6rem}
+.nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cv{background:var(--teal);color:var(--navy)!important;padding:5px 14px;border-radius:4px;font-weight:600!important}
+.nav-cv:hover{background:var(--teal2)!important;color:var(--navy)!important}
+
+/* HERO */
+#hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:80px 2rem 60px;position:relative;overflow:hidden}
+.rfid-pulse{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.pulse-ring{position:absolute;border-radius:50%;border:1.5px solid var(--teal);top:50%;left:50%;transform:translate(-50%,-50%);animation:rfid 3.6s ease-out infinite;opacity:0}
+.pulse-ring:nth-child(1){animation-delay:0s}
+.pulse-ring:nth-child(2){animation-delay:1.2s}
+.pulse-ring:nth-child(3){animation-delay:2.4s}
+@keyframes rfid{0%{width:60px;height:60px;opacity:.7}100%{width:700px;height:700px;opacity:0}}
+@media(prefers-reduced-motion:reduce){.pulse-ring{animation:none}}
+
+.hero-inner{position:relative;z-index:2;display:flex;align-items:center;gap:4rem;max-width:900px;width:100%}
+.hero-photo-wrap{flex-shrink:0}
+.hero-photo{width:160px;height:200px;border-radius:12px;object-fit:cover;object-position:center top;border:3px solid rgba(0,201,177,.4);box-shadow:0 0 40px rgba(0,201,177,.15)}
+.hero-content{flex:1}
+.hero-tag{display:inline-block;background:rgba(0,201,177,.15);border:1px solid rgba(0,201,177,.4);color:var(--teal);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:1rem}
+.hero-name{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;color:var(--white);line-height:1.1;letter-spacing:-.01em;margin-bottom:.4rem}
+.hero-title{font-family:'EB Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,.6);font-style:italic;margin-bottom:1.2rem}
+.hero-desc{font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:1.6rem;max-width:520px}
+.hero-stats{display:flex;gap:2rem;margin-bottom:1.6rem;flex-wrap:wrap}
+.stat-num{font-family:'EB Garamond',serif;font-size:2rem;font-weight:700;color:var(--teal);line-height:1}
+.stat-label{font-size:.68rem;color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.hero-btns{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:6px;font-size:.78rem;font-weight:500;text-decoration:none;transition:all .2s;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
+.btn:hover{background:rgba(0,201,177,.15);border-color:var(--teal);color:var(--teal)}
+.btn-primary{background:var(--teal);border-color:var(--teal);color:var(--navy)!important;font-weight:600}
+.btn-primary:hover{background:var(--teal2)!important;color:var(--navy)!important}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.3);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:5px}
+.scroll-arrow{animation:bounce 1.8s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* SECTIONS */
+section{padding:80px 2rem}
+.container{max-width:860px;margin:0 auto}
+.section-label{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.section-title{font-family:'EB Garamond',serif;font-size:clamp(1.7rem,3.5vw,2.1rem);font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:1.4rem}
+.section-rule{width:48px;height:3px;background:var(--teal);border-radius:2px;margin-bottom:2rem}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{margin-bottom:1rem;line-height:1.75}
+.about-card{background:var(--bg);border-radius:12px;padding:1.5rem;border:1px solid var(--light)}
+.about-card h4{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:1rem}
+.info-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:.7rem;font-size:.85rem}
+.info-icon{color:var(--teal);flex-shrink:0;margin-top:1px}
+.info-text a{color:var(--navy);text-decoration:none}
+.info-text a:hover{color:var(--teal)}
+
+/* RESEARCH */
+#research{background:var(--bg)}
+.exp-item{background:var(--white);border-radius:10px;padding:1.5rem;margin-bottom:1rem;border:1px solid var(--light);border-left:3px solid var(--teal)}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.4rem;gap:1rem}
+.exp-title{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--navy)}
+.exp-date{font-size:.75rem;color:var(--mid);white-space:nowrap;padding-top:2px}
+.exp-org{font-size:.82rem;color:var(--teal2);font-weight:500;margin-bottom:.8rem}
+.exp-bullets{list-style:none}
+.exp-bullets li{font-size:.87rem;color:var(--slate);padding:3px 0 3px 16px;position:relative;line-height:1.6}
+.exp-bullets li::before{content:"◦";position:absolute;left:0;color:var(--teal)}
+
+/* SIMULATION GALLERY */
+#systems{background:var(--white)}
+.sys-intro{color:var(--slate);line-height:1.75;margin-bottom:2rem;max-width:680px}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gallery-item{border-radius:10px;overflow:hidden;border:1px solid var(--light);background:var(--navy)}
+.gallery-item img{width:100%;display:block;transition:transform .3s ease}
+.gallery-item:hover img{transform:scale(1.02)}
+.gallery-caption{padding:.7rem 1rem;font-size:.78rem;color:rgba(255,255,255,.7);font-weight:500;background:var(--navy)}
+.gallery-item-wide{grid-column:1/-1}
+
+/* PUBLICATIONS */
+#publications{background:var(--bg)}
+.pub-legend{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.badge{font-size:.68rem;font-weight:600;letter-spacing:.06em;padding:3px 10px;border-radius:20px;text-transform:uppercase}
+.badge.published{background:#DCFCE7;color:var(--published)}
+.badge.inpress{background:#DBEAFE;color:var(--inpress)}
+.badge.review{background:#FEF3C7;color:var(--review)}
+.badge.inprep{background:#EFF6FF;color:var(--inprep)}
+.pub-group-label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin:1.8rem 0 .8rem;padding-bottom:6px;border-bottom:1px solid var(--light)}
+.pub-item{padding:1.1rem 1.2rem;border-radius:8px;margin-bottom:.7rem;border:1px solid var(--light)}
+.pub-item.published{background:#F0FDF4;border-color:#BBF7D0}
+.pub-item.inpress{background:#EFF6FF;border-color:#BFDBFE}
+.pub-item.review{background:#FFFBEB;border-color:#FDE68A}
+.pub-item.inprep{background:#EFF6FF;border-color:#BFDBFE}
+.pub-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.3rem}
+.pub-tag{font-size:.72rem;font-weight:700;color:var(--navy);white-space:nowrap}
+.pub-title{font-family:'EB Garamond',serif;font-size:.98rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem}
+.pub-authors{font-size:.78rem;color:var(--mid);font-style:italic;margin-bottom:.25rem}
+.pub-venue{font-size:.78rem;color:var(--slate)}
+
+/* EDUCATION */
+#education{background:var(--white)}
+.edu-item{background:var(--bg);border-radius:10px;padding:1.5rem;margin-bottom:1rem;border:1px solid var(--light)}
+.edu-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.4rem}
+.edu-uni{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--navy)}
+.edu-date{font-size:.75rem;color:var(--mid);white-space:nowrap}
+.edu-degree{font-size:.85rem;color:var(--teal2);font-weight:500;margin-bottom:.5rem}
+.edu-gpa{display:inline-block;background:rgba(0,201,177,.1);border:1px solid rgba(0,201,177,.3);color:var(--teal2);font-size:.78rem;font-weight:600;padding:2px 10px;border-radius:4px;margin-bottom:.6rem}
+.edu-desc{font-size:.83rem;color:var(--slate);line-height:1.65}
+
+/* SKILLS */
+#skills{background:var(--bg)}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.skill-group{background:var(--white);border-radius:10px;padding:1.2rem;border:1px solid var(--light)}
+.skill-group-title{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal2);margin-bottom:.8rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tag{font-size:.76rem;padding:3px 10px;border-radius:4px;font-weight:500}
+.skill-tag.prof{background:rgba(27,42,74,.08);color:var(--navy)}
+.skill-tag.fam{background:var(--light);color:var(--slate)}
+.lang-table{width:100%;border-collapse:collapse;margin-top:1.5rem;font-size:.83rem}
+.lang-table th{text-align:left;padding:8px 12px;background:var(--navy);color:rgba(255,255,255,.7);font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.lang-table th:first-child{border-radius:6px 0 0 0}
+.lang-table th:last-child{border-radius:0 6px 0 0}
+.lang-table td{padding:8px 12px;border-bottom:1px solid var(--light)}
+.lang-table tr:last-child td{border-bottom:none}
+.lang-table tr:nth-child(even) td{background:var(--bg)}
+.cefr{font-weight:600;color:var(--teal2)}
+
+/* AWARDS */
+#awards{background:var(--white)}
+.awards-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.award-item{background:var(--bg);border-radius:10px;padding:1.2rem;border:1px solid var(--light);border-top:3px solid var(--teal)}
+.award-title{font-family:'EB Garamond',serif;font-size:.98rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
+.award-org{font-size:.78rem;color:var(--teal2);font-weight:500;margin-bottom:.25rem}
+.award-date{font-size:.73rem;color:var(--mid)}
+.award-desc{font-size:.78rem;color:var(--slate);margin-top:.4rem;line-height:1.5}
+
+/* CONTACT */
+#contact{background:var(--navy)}
+#contact .section-title{color:var(--white)}
+.contact-desc{color:rgba(255,255,255,.65);margin-bottom:2rem;max-width:500px;line-height:1.7}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.contact-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:1.1rem;text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:12px}
+.contact-card:hover{background:rgba(0,201,177,.15);border-color:rgba(0,201,177,.4)}
+.contact-icon{font-size:1.4rem}
+.contact-label{font-size:.7rem;color:rgba(255,255,255,.45);font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.contact-value{font-size:.85rem;color:var(--white);font-weight:500}
+
+footer{background:#111827;color:rgba(255,255,255,.3);text-align:center;padding:1.5rem;font-size:.75rem}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  nav{padding:0 1rem}
+  .nav-links{gap:.8rem}
+  .nav-links a{font-size:.65rem}
+  section{padding:60px 1.2rem}
+  .hero-inner{flex-direction:column;text-align:center;gap:2rem}
+  .hero-photo{width:130px;height:162px}
+  .hero-stats{justify-content:center}
+  .about-grid{grid-template-columns:1fr;gap:1.5rem}
+  .skills-grid{grid-template-columns:1fr}
+  .awards-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-item-wide{grid-column:auto}
+  .pub-top{flex-direction:column;gap:.4rem}
+  .exp-header,.edu-header{flex-direction:column;gap:.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">MD Mehedi Hasan</span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#systems">Systems</a>
+    <a href="#publications">Papers</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+    <a href="cv.pdf" download class="nav-cv">CV ↓</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="rfid-pulse">
+    <div class="pulse-ring"></div>
+    <div class="pulse-ring"></div>
+    <div class="pulse-ring"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img src="photo.jpg" alt="MD Mehedi Hasan" class="hero-photo">
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag">Graduate Researcher · Saga University, Japan</div>
+      <h1 class="hero-name">MD Mehedi Hasan</h1>
+      <p class="hero-title">RFID &amp; Digital Twin Systems for Healthcare</p>
+      <p class="hero-desc">Building simulation-based evidence for RFID-IoT deployment in resource-constrained emergency departments — validated across 50 stochastic runs spanning low-census to mass-casualty surge.</p>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">99.7%</div><div class="stat-label">Alert Resolution</div></div>
+        <div class="stat-item"><div class="stat-num">50</div><div class="stat-label">Simulation Runs</div></div>
+        <div class="stat-item"><div class="stat-num">83s</div><div class="stat-label">Mean Response</div></div>
+        <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Papers 2025–26</div></div>
+      </div>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="cv.pdf" download>Download CV</a>
+        <a class="btn" href="#contact">Contact Me</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=jHApCFEAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a class="btn" href="https://orcid.org/0009-0006-9162-0310" target="_blank">ORCID</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><span class="scroll-arrow">↓</span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">Who I am</div>
+    <h2 class="section-title">About</h2>
+    <div class="section-rule"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a Master of Engineering student at Saga University, Japan (GPA 3.9/4.0), conducting research on RFID-based Digital Twin systems for emergency department resource management, supervised by Professor Eisuke Hanada.</p>
+        <p>My thesis develops simulation-based evidence for RFID-IoT deployment in resource-constrained hospitals — validated across 50 stochastic runs covering 39 to 762 patient arrivals, demonstrating 99.7% alert resolution and cross-census robustness from quiet overnight periods to mass casualty surge.</p>
+        <p>I am actively seeking a fully funded PhD position in healthcare informatics, biomedical engineering, or IoT systems — with primary focus on Australia (RTP) and international programs. Thesis defense: July 14, 2026.</p>
+      </div>
+      <div class="about-card">
+        <h4>Quick Info</h4>
+        <div class="info-row"><span class="info-icon">📍</span><span class="info-text">Saga University, Saga, Japan</span></div>
+        <div class="info-row"><span class="info-icon">🎓</span><span class="info-text">MEng Computer Science &amp; IT (Oct 2024 – Sep 2026)</span></div>
+        <div class="info-row"><span class="info-icon">🔬</span><span class="info-text">RFID · Digital Twin · IoT · Healthcare Simulation</span></div>
+        <div class="info-row"><span class="info-icon">🌏</span><span class="info-text">From Bangladesh · Based in Japan</span></div>
+        <div class="info-row"><span class="info-icon">✉️</span><span class="info-text"><a href="mailto:mehedihasan.baiu22@gmail.com">mehedihasan.baiu22@gmail.com</a></span></div>
+        <div class="info-row"><span class="info-icon">🔗</span><span class="info-text"><a href="https://orcid.org/0009-0006-9162-0310" target="_blank">ORCID: 0009-0006-9162-0310</a></span></div>
+        <div class="info-row"><span class="info-icon">💼</span><span class="info-text"><a href="https://www.linkedin.com/in/md-mehedi-hasan130500/" target="_blank">LinkedIn Profile</a></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH EXPERIENCE -->
+<section id="research">
+  <div class="container">
+    <div class="section-label">What I do</div>
+    <h2 class="section-title">Research Experience</h2>
+    <div class="section-rule"></div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Graduate Researcher — Hanada Laboratory</div>
+        <div class="exp-date">Oct 2024 – Present</div>
+      </div>
+      <div class="exp-org">Saga University, Saga, Japan · Research Assistantship (¥19,800/month)</div>
+      <ul class="exp-bullets">
+        <li>Designed and implemented an RFID-based agent-simulation system in MATLAB (V5.3); validated across 50 stochastic runs (39–762 patient arrivals) spanning four census strata with 99.7% alert resolution and 83.0s mean response time.</li>
+        <li>Built a Digital Twin visualization layer in Unity 3D (11 C# scripts) integrating RFID coordinate data with NavMesh-based pathfinding; achieved functional equivalence with the MATLAB 2D baseline (100% alert response coverage, 2.7× surge modulation accuracy).</li>
+        <li>Developed and validated a dynamic backup resource reallocation mechanism — 192% volume increase under surge absorbed with only a 0.2-second response-time difference.</li>
+        <li>Conducted cross-census robustness analysis across 50 stochastic runs, resolving a stochastic dispatch anomaly (Run R13) through 12 targeted low-census runs.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Graduate Peer Mentor</div>
+        <div class="exp-date">Apr – Sep 2026</div>
+      </div>
+      <div class="exp-org">Saga University, Japan · Faculty-remunerated (avg. ¥18,000/month)</div>
+      <ul class="exp-bullets">
+        <li>Provided academic and settlement mentoring to a newly arrived international student covering CS/engineering coursework and practical life in Japan (paperwork, banking, health insurance).</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Team Leader &amp; English Presentation Coach</div>
+        <div class="exp-date">May–Jul 2025 &amp; 2026</div>
+      </div>
+      <div class="exp-org">Saga University × Chienkan High School Science English Outreach Programme</div>
+      <ul class="exp-bullets">
+        <li>Led two consecutive teams of Japanese high school students from project concept to final scientific presentation across two years.</li>
+        <li>2025: Scientific poster coaching. 2026: Oral presentation development and English delivery coaching.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">International Research Presentation</div>
+        <div class="exp-date">Feb 23–27, 2026</div>
+      </div>
+      <div class="exp-org">Saga University × Kasetsart University Cross-Cultural Collaboration Programme · Bangkok, Thailand</div>
+      <ul class="exp-bullets">
+        <li>Presented RFID-based ED simulation research to an international academic audience as part of a bilateral collaboration programme between Saga University and Kasetsart University, Thailand.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATION SYSTEMS -->
+<section id="systems">
+  <div class="container">
+    <div class="section-label">The work itself</div>
+    <h2 class="section-title">Simulation Systems</h2>
+    <div class="section-rule"></div>
+    <p class="sys-intro">Two integrated systems form the thesis contribution — a MATLAB 2D agent-based simulation (BASE_SYSTEM V5.3 / ADMIN_SYSTEM V5.5) and a Unity 3D Digital Twin visualization layer. Together they validate RFID-IoT dispatch across 50 stochastic runs covering 39 to 762 patient arrivals.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="sim_matlab_normal.png" alt="MATLAB RFID simulation — normal operation, 20×15m ward with 4 zones and 6 RFID readers">
+        <div class="gallery-caption">🔵 MATLAB 2D — Normal Operation · 4 Zones · 6 RFID Readers · 8 Nurses · 15 Beds</div>
+      </div>
+      <div class="gallery-item">
+        <img src="sim_matlab_active.png" alt="MATLAB RFID simulation — active patients and nurses dispatched">
+        <div class="gallery-caption">🟢 MATLAB 2D — Active Patients · Nurse Dispatch · Real-Time CSV Logging</div>
+      </div>
+      <div class="gallery-item gallery-item-wide">
+        <img src="sim_matlab_surge.png" alt="MATLAB RFID simulation — emergency surge active, backup resources deployed">
+        <div class="gallery-caption">🔴 MATLAB 2D — Emergency Surge Active · Backup Nurses + Emergency Beds Deployed · Total Alerts Today: 38</div>
+      </div>
+      <div class="gallery-item">
+        <img src="sim_unity_3d.png" alt="Unity 3D Digital Twin — hospital ward 3D visualization with RFID agents">
+        <div class="gallery-caption">🟣 Unity 3D Digital Twin — Early Development View · 4 Zone Colour-Coded Ward</div>
+      </div>
+      <div class="gallery-item">
+        <img src="sim_unity_scene.png" alt="Unity 3D scene editor showing hospital ward architecture and C# script modules">
+        <div class="gallery-caption">⚙️ Unity 3D Scene Editor · 11 C# Manager Scripts · NavMesh Pathfinding · BedGroup + NurseManager Architecture</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label">My work</div>
+    <h2 class="section-title">Publications</h2>
+    <div class="section-rule"></div>
+    <div class="pub-legend">
+      <span class="badge published">Published</span>
+      <span class="badge inpress">Accepted / In Press</span>
+      <span class="badge review">Under Review</span>
+      <span class="badge inprep">In Preparation</span>
+    </div>
+
+    <div class="pub-group-label">First-Author Papers</div>
+
+    <div class="pub-item inpress">
+      <div class="pub-top"><span class="pub-tag">[C.1]</span><span class="badge inpress">Accepted / In Press</span></div>
+      <div class="pub-title">Improving Patient Care in the Emergency Wards of Bangladesh Through an RFID-Based Web Simulation</div>
+      <div class="pub-authors">Hasan MD Mehedi, Hossain Shakil, Eisuke Hanada</div>
+      <div class="pub-venue">20th EAI Int'l Conference on Body Area Networks (EAI BodyNets 2025), Dec 2025</div>
+    </div>
+
+    <div class="pub-item published">
+      <div class="pub-top"><span class="pub-tag">[C.2]</span><span class="badge published">Published</span></div>
+      <div class="pub-title">Digital Twin-Based Emergency Resource Localization System for Crowded Hospital Wards Using RFID and VR Visualization</div>
+      <div class="pub-authors">Hasan MD Mehedi, Hossain Shakil, Eisuke Hanada</div>
+      <div class="pub-venue">IEICE General Conference 2026 — Session B-19, Kyushu Sangyo University, Mar 2026</div>
+    </div>
+
+    <div class="pub-item review">
+      <div class="pub-top"><span class="pub-tag">[C.3]</span><span class="badge review">Under Review</span></div>
+      <div class="pub-title">Real-Time RFID Tracking Simulation for Hospital Resource Management: A 3D Unity Implementation with Dynamic Surge Response and VR Readiness</div>
+      <div class="pub-authors">Hasan MD Mehedi, Eisuke Hanada</div>
+      <div class="pub-venue">ISMICT 2026 — 20th Int'l Symposium on Medical Information and Communication Technology</div>
+    </div>
+
+    <div class="pub-item review">
+      <div class="pub-top"><span class="pub-tag">[C.4]</span><span class="badge review">Under Review</span></div>
+      <div class="pub-title">Cross-Census Stability and Surge Resilience of RFID-IoT Dispatch in a Bangladeshi Emergency Department Simulation</div>
+      <div class="pub-authors">Hasan MD Mehedi, Eisuke Hanada</div>
+      <div class="pub-venue">EAI HealthyAIoT 2026 — 11th EAI Int'l Conference on AIoT Healthcare Systems, Guangzhou, China</div>
+    </div>
+
+    <div class="pub-item inprep">
+      <div class="pub-top"><span class="pub-tag">[S.1]</span><span class="badge inprep">In Preparation</span></div>
+      <div class="pub-title">An RFID-Based Dynamic Resource Management Simulation for Smart Hospital Wards: A Bangladesh Healthcare Perspective</div>
+      <div class="pub-authors">Hasan MD Mehedi, Eisuke Hanada</div>
+      <div class="pub-venue">Journal — Extended from EAI BodyNets 2025 (target submission July 2026)</div>
+    </div>
+
+    <div class="pub-group-label">Co-Authored Contributions</div>
+
+    <div class="pub-item review">
+      <div class="pub-top"><span class="pub-tag">[C.5]</span><span class="badge review">Under Review</span></div>
+      <div class="pub-title">Transfer Learning-Based Renal Ultrasound Classification for CAKUT Screening: A Preliminary Study Using ResNet-50</div>
+      <div class="pub-authors">Ahmed Alif, Hasan MD Mehedi, Eisuke Hanada</div>
+      <div class="pub-venue">ISMICT 2026 — 20th Int'l Symposium on Medical Information and Communication Technology</div>
+    </div>
+
+    <div class="pub-item review">
+      <div class="pub-top"><span class="pub-tag">[C.6]</span><span class="badge review">Under Review</span></div>
+      <div class="pub-title">A Lightweight AIoT Framework for CAKUT Screening in Resource-Limited Community Clinics: System Design and Edge Deployment Feasibility</div>
+      <div class="pub-authors">Ahmed Alif, Hasan MD Mehedi, Eisuke Hanada</div>
+      <div class="pub-venue">EAI HealthyAIoT 2026 — 11th EAI Int'l Conference on AIoT Healthcare Systems, Guangzhou, China</div>
+    </div>
+
+    <div class="pub-item review">
+      <div class="pub-top"><span class="pub-tag">[C.7]</span><span class="badge review">Under Review</span></div>
+      <div class="pub-title">Traffic-Aware Routing and Real-Time Clinical Synchronisation for Mobile Emergency Medical Services in Resource-Constrained Environments</div>
+      <div class="pub-authors">Das Bishal, Hasan MD Mehedi, Eisuke Hanada</div>
+      <div class="pub-venue">ISMICT 2026 — 20th Int'l Symposium on Medical Information and Communication Technology</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Education</h2>
+    <div class="section-rule"></div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-uni">Saga University</div>
+        <div class="edu-date">Oct 2024 – Sep 2026 · Saga, Japan</div>
+      </div>
+      <div class="edu-degree">Master of Engineering — Computer Science &amp; Information Technology</div>
+      <div class="edu-gpa">GPA: 3.9 / 4.0 (Final semester: 4.0 / 4.0)</div>
+      <div class="edu-desc"><strong>Supervisor:</strong> Professor Eisuke Hanada<br>
+      <strong>Thesis (submitted; defense July 14, 2026):</strong> A Digital Twin Approach to Emergency Department Resource Management<br><br>
+      Two-stage Digital Twin framework combining MATLAB agent-based simulation with Unity 3D VR visualization for RFID-based localization and resource tracking across a 20×15 m ward. Evaluated across 50 stochastic runs with 99.7% alert resolution and 83-second mean response time.</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-uni">Bangladesh Army International University of Science &amp; Technology (BAIUST)</div>
+        <div class="edu-date">2018 – 2022 · Cumilla, Bangladesh</div>
+      </div>
+      <div class="edu-degree">Bachelor of Science — Computer Science &amp; Engineering</div>
+      <div class="edu-gpa">GPA: 3.16 / 4.0</div>
+      <div class="edu-desc"><strong>Final Year Project:</strong> Hospital Management System for Mainamati Cantonment General Hospital — web-based system (HTML/CSS, JavaScript, MySQL). Role: Frontend Developer.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills</h2>
+    <div class="section-rule"></div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Simulation &amp; Modeling</div>
+        <div class="skill-tags">
+          <span class="skill-tag prof">MATLAB (V5.3)</span><span class="skill-tag prof">Unity 3D</span><span class="skill-tag prof">Agent-Based Sim</span><span class="skill-tag prof">Monte Carlo</span><span class="skill-tag prof">Digital Twin</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">RFID &amp; IoT</div>
+        <div class="skill-tags">
+          <span class="skill-tag prof">Passive UHF RFID</span><span class="skill-tag prof">Active RFID</span><span class="skill-tag prof">Chipless RFID</span><span class="skill-tag prof">RSSI Trilateration</span><span class="skill-tag prof">LANDMARC</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Programming</div>
+        <div class="skill-tags">
+          <span class="skill-tag prof">MATLAB Scripting</span><span class="skill-tag prof">C# (Unity)</span><span class="skill-tag prof">Python</span><span class="skill-tag fam">HTML/CSS</span><span class="skill-tag fam">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">3D &amp; Visualization</div>
+        <div class="skill-tags">
+          <span class="skill-tag prof">NavMesh Pathfinding</span><span class="skill-tag prof">RFID Pulse Animation</span><span class="skill-tag prof">VR Architecture</span><span class="skill-tag fam">Adobe PS/AI/AE</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Research &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag prof">Academic Writing</span><span class="skill-tag prof">LaTeX</span><span class="skill-tag prof">Literature Review</span><span class="skill-tag fam">Git/GitHub</span><span class="skill-tag fam">Arduino</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data</div>
+        <div class="skill-tags">
+          <span class="skill-tag prof">Statistical Analysis</span><span class="skill-tag prof">CSV Pipeline</span><span class="skill-tag fam">Edge-Cloud Architecture</span>
+        </div>
+      </div>
+    </div>
+    <table class="lang-table" style="margin-top:2rem">
+      <thead><tr><th>Language</th><th>Listening</th><th>Reading</th><th>Speaking</th><th>Writing</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Bengali</strong></td><td class="cefr">C2</td><td class="cefr">C2</td><td class="cefr">C2</td><td class="cefr">C2</td><td>Native</td></tr>
+        <tr><td><strong>English</strong></td><td class="cefr">B2</td><td class="cefr">C1</td><td class="cefr">B2</td><td class="cefr">B2</td><td>Professional — TOEFL scheduled Aug 2026</td></tr>
+        <tr><td><strong>Japanese</strong></td><td class="cefr">A2</td><td class="cefr">A2</td><td class="cefr">A2</td><td class="cefr">A1</td><td>Daily conversation (approx. JLPT N4)</td></tr>
+        <tr><td><strong>Hindi/Urdu</strong></td><td class="cefr">B1</td><td class="cefr">A1</td><td class="cefr">B1</td><td class="cefr">A1</td><td>Conversational; limited reading/writing</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.72rem;color:var(--mid);margin-top:8px">CEFR: A1/A2 Basic · B1/B2 Independent · C1/C2 Proficient &nbsp;|&nbsp; JLPT: N5 (beginner) → N1 (advanced)</p>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">Honors, Scholarships &amp; Awards</h2>
+    <div class="section-rule"></div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <div class="award-title">MEXT Honors Scholarship</div>
+        <div class="award-org">Japanese Government (MEXT)</div>
+        <div class="award-date">Oct 2024 – Mar 2025</div>
+        <div class="award-desc">¥48,000/month · Competitive national scholarship for international graduate students in Japan.</div>
+      </div>
+      <div class="award-item">
+        <div class="award-title">Saga City Scholarship</div>
+        <div class="award-org">Saga City Government, Japan</div>
+        <div class="award-date">May 2025 – Mar 2026</div>
+        <div class="award-desc">¥20,000/month · Competitive municipal scholarship recognising academic achievement.</div>
+      </div>
+      <div class="award-item">
+        <div class="award-title">Full Tuition Exemption</div>
+        <div class="award-org">Saga University, Japan</div>
+        <div class="award-date">Oct 2024 – Sep 2026</div>
+        <div class="award-desc">National university tuition fully waived (~¥535,800/year) for the full MEng programme.</div>
+      </div>
+      <div class="award-item">
+        <div class="award-title">Candidate for Academic Incentive Award</div>
+        <div class="award-org">IEICE General Conference 2026 — Session B-19-01</div>
+        <div class="award-date">Mar 2026</div>
+        <div class="award-desc">Nominated for excellence in paper on Digital Twin-Based Emergency Resource Localization, Kyushu Sangyo University.</div>
+      </div>
+      <div class="award-item">
+        <div class="award-title">Perfect Semester GPA — 4.0 / 4.0</div>
+        <div class="award-org">Saga University</div>
+        <div class="award-date">2025 Fall Semester</div>
+        <div class="award-desc">Perfect GPA in the final completed semester of the MEng programme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-rule"></div>
+    <p class="contact-desc">I am actively seeking fully funded PhD positions in healthcare informatics, IoT systems, or biomedical engineering. Please reach out if you have opportunities or would like to discuss research collaboration.</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:mehedihasan.baiu22@gmail.com"><span class="contact-icon">✉️</span><div><div class="contact-label">Email</div><div class="contact-value">mehedihasan.baiu22@gmail.com</div></div></a>
+      <a class="contact-card" href="https://www.linkedin.com/in/md-mehedi-hasan130500/" target="_blank"><span class="contact-icon">💼</span><div><div class="contact-label">LinkedIn</div><div class="contact-value">md-mehedi-hasan130500</div></div></a>
+      <a class="contact-card" href="https://scholar.google.com/citations?user=jHApCFEAAAAJ&hl=en" target="_blank"><span class="contact-icon">📚</span><div><div class="contact-label">Google Scholar</div><div class="contact-value">View Publications</div></div></a>
+      <a class="contact-card" href="https://orcid.org/0009-0006-9162-0310" target="_blank"><span class="contact-icon">🔬</span><div><div class="contact-label">ORCID</div><div class="contact-value">0009-0006-9162-0310</div></div></a>
+      <a class="contact-card" href="https://github.com/MHUdoy11" target="_blank"><span class="contact-icon">💻</span><div><div class="contact-label">GitHub</div><div class="contact-value">MHUdoy11</div></div></a>
+      <a class="contact-card" href="https://www.researchgate.net/profile/Md-Hasan-1132" target="_blank"><span class="contact-icon">🧪</span><div><div class="contact-label">ResearchGate</div><div class="contact-value">View Profile</div></div></a>
+    </div>
+  </div>
+</section>
+
+<footer><p>MD Mehedi Hasan · Graduate Researcher · Saga University, Japan · 2026</p></footer>
+</body>
+</html>
