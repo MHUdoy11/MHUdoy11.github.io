@@ -4,240 +4,278 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MD Mehedi Hasan — RFID & Digital Twin Researcher</title>
-<meta name="description" content="MD Mehedi Hasan — Graduate Researcher at Saga University, Japan. RFID-based Digital Twin systems for emergency department resource management.">
+<meta name="description" content="MD Mehedi Hasan — Graduate Researcher at Saga University, Japan. RFID-based Digital Twin systems for emergency department resource management in Bangladesh.">
 <meta name="keywords" content="MD Mehedi Hasan, RFID, Digital Twin, Healthcare Informatics, Emergency Department, MATLAB, Unity 3D, Bangladesh, Saga University, PhD">
 <meta name="author" content="MD Mehedi Hasan">
 <meta property="og:title" content="MD Mehedi Hasan — RFID & Digital Twin Researcher">
-<meta property="og:description" content="Graduate Researcher at Saga University building RFID-based Digital Twin systems for emergency department resource management.">
+<meta property="og:description" content="MEng defended July 2026. RFID-based Digital Twin simulation for emergency department resource management in Bangladesh hospitals.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mhudoy11.github.io">
 <meta property="og:image" content="https://mhudoy11.github.io/photo.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MD Mehedi Hasan — Researcher">
-<meta name="twitter:description" content="RFID & Digital Twin Researcher, Saga University Japan">
+<meta name="twitter:description" content="RFID & Digital Twin Researcher | MEng Defended July 2026 | Saga University Japan">
 <meta name="twitter:image" content="https://mhudoy11.github.io/photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ── RESET ── */
+/* ══ RESET & ROOT ══════════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1B2A4A; --navy2:#243659; --teal:#00C9B1; --teal2:#00A896;
-  --teal-glow:rgba(0,201,177,0.25); --bg:#F4F7FB; --white:#FFFFFF;
+  --navy:#1B2A4A; --navy2:#162038; --teal:#00C9B1; --teal2:#00A896;
+  --teal3:rgba(0,201,177,0.12); --bg:#F4F7FB; --white:#FFFFFF;
   --slate:#374151; --mid:#6B7280; --vlg:#9CA3AF; --light:#E5E7EB;
-  --card:#FFFFFF;
-  --pub:#166534; --ip:#1565C0; --rv:#92400E; --pr:#1D4ED8;
+  --pub:#166534; --ip:#1565C0; --rv:#92400E; --pr:#4C1D95;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.08); --shadow:0 4px 20px rgba(27,42,74,.1);
+  --shadow-lg:0 12px 40px rgba(27,42,74,.16);
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--slate);line-height:1.65;font-size:15px;overflow-x:hidden}
 
-/* ── SCROLL PROGRESS ── */
-#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal2));width:0%;z-index:9999;transition:width .1s}
+/* ══ SCROLL PROGRESS ══════════════════════════════════════════════ */
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--teal),#7C3AED,var(--teal));background-size:200% 100%;animation:shimmer 2s linear infinite;width:0%;z-index:9999}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
-/* ── NAV ── */
-nav{position:fixed;top:3px;left:0;right:0;z-index:200;background:rgba(27,42,74,0.96);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;padding:0 2.5rem;height:56px;border-bottom:1px solid rgba(0,201,177,0.15)}
-.nav-name{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--white);letter-spacing:.03em;text-decoration:none}
+/* ══ NAV ══════════════════════════════════════════════════════════ */
+nav{position:fixed;top:3px;left:0;right:0;z-index:200;background:rgba(22,32,56,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:flex;justify-content:space-between;align-items:center;padding:0 2.5rem;height:58px;border-bottom:1px solid rgba(0,201,177,0.18);transition:background .3s}
+.nav-name{font-family:'EB Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--white);letter-spacing:.03em;text-decoration:none}
+.nav-name span{color:var(--teal)}
 .nav-links{display:flex;gap:1.4rem;align-items:center}
-.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:.75rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s;position:relative;padding-bottom:2px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--teal);transition:width .2s}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;transition:color .2s;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--teal);transition:width .25s ease;border-radius:2px}
 .nav-links a:hover{color:var(--teal)}
-.nav-links a:hover::after{width:100%}
-.nav-cv{background:var(--teal)!important;color:var(--navy)!important;padding:5px 14px!important;border-radius:5px!important;font-weight:700!important;letter-spacing:.05em!important}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--teal)}
+.nav-cv{background:linear-gradient(135deg,var(--teal),var(--teal2))!important;color:var(--navy)!important;padding:6px 16px!important;border-radius:6px!important;font-weight:700!important;box-shadow:0 2px 10px rgba(0,201,177,.35)!important}
 .nav-cv::after{display:none!important}
-.nav-cv:hover{background:var(--teal2)!important}
+.nav-cv:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,201,177,.45)!important}
 
-/* ── HERO ── */
-#hero{min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 2rem 70px;position:relative;overflow:hidden}
+/* ══ HERO ══════════════════════════════════════════════════════════ */
+#hero{min-height:100vh;background:var(--navy2);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 2rem 70px;position:relative;overflow:hidden}
 
-/* grid bg */
-#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,201,177,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,201,177,.04) 1px,transparent 1px);background-size:50px 50px;pointer-events:none}
+/* Animated gradient orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:drift 8s ease-in-out infinite alternate}
+.orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,201,177,.12),transparent 70%);top:-10%;left:-10%;animation-delay:0s}
+.orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.1),transparent 70%);top:30%;right:-10%;animation-delay:-3s}
+.orb-3{width:350px;height:350px;background:radial-gradient(circle,rgba(0,201,177,.07),transparent 70%);bottom:-10%;left:30%;animation-delay:-6s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,20px) scale(1.08)}}
 
-/* gradient overlay */
-#hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 70% 50%,rgba(0,201,177,.08) 0%,transparent 70%);pointer-events:none}
+/* Grid overlay */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,201,177,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,201,177,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%)}
 
-/* RFID rings */
+/* RFID pulse rings */
 .rfid-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:1}
-.ring{position:absolute;border-radius:50%;border:1px solid var(--teal);top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;animation:pulse 4s ease-out infinite}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(0,201,177,.5);top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;animation:rfidPulse 4.5s ease-out infinite}
 .ring:nth-child(1){animation-delay:0s}
-.ring:nth-child(2){animation-delay:1.33s}
-.ring:nth-child(3){animation-delay:2.66s}
-@keyframes pulse{0%{width:40px;height:40px;opacity:.6}100%{width:900px;height:900px;opacity:0}}
-@media(prefers-reduced-motion:reduce){.ring{animation:none}}
+.ring:nth-child(2){animation-delay:1.5s}
+.ring:nth-child(3){animation-delay:3s}
+@keyframes rfidPulse{0%{width:40px;height:40px;opacity:.7;border-color:rgba(0,201,177,.7)}100%{width:800px;height:800px;opacity:0;border-color:rgba(0,201,177,0)}}
+@media(prefers-reduced-motion:reduce){.ring,.orb{animation:none}}
 
-.hero-inner{position:relative;z-index:2;display:flex;align-items:center;gap:5rem;max-width:960px;width:100%}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:center;gap:5rem;max-width:980px;width:100%}
 
-/* photo */
+/* Photo with animated border */
 .photo-wrap{flex-shrink:0;position:relative}
-.photo-wrap::before{content:'';position:absolute;inset:-4px;border-radius:14px;background:linear-gradient(135deg,var(--teal),transparent 60%);z-index:0;animation:borderGlow 3s ease-in-out infinite alternate}
-@keyframes borderGlow{from{opacity:.5}to{opacity:1}}
-.hero-photo{width:170px;height:212px;border-radius:12px;object-fit:cover;object-position:center top;position:relative;z-index:1;display:block}
+.photo-ring{position:absolute;inset:-3px;border-radius:16px;background:conic-gradient(from 0deg,var(--teal),#6366F1,var(--teal),#06B6D4,var(--teal));animation:rotateBorder 4s linear infinite;z-index:0;opacity:.8}
+.photo-mask{position:absolute;inset:2px;border-radius:14px;background:var(--navy2);z-index:1}
+.hero-photo{width:175px;height:218px;border-radius:12px;object-fit:cover;object-position:center top;position:relative;z-index:2;display:block}
+@keyframes rotateBorder{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 
-/* text */
 .hero-text{flex:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,177,.12);border:1px solid rgba(0,201,177,.35);color:var(--teal);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1.2rem}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:blink 1.5s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.hero-name{font-family:'EB Garamond',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem}
-.hero-name span{color:var(--teal)}
-.hero-role{font-family:'EB Garamond',serif;font-size:1.15rem;color:rgba(255,255,255,.55);font-style:italic;margin-bottom:1.1rem}
-.hero-desc{font-size:.9rem;color:rgba(255,255,255,.68);line-height:1.75;margin-bottom:1.8rem;max-width:500px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,201,177,.1);border:1px solid rgba(0,201,177,.3);color:var(--teal);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:1.2rem}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal);animation:pulse-dot 1.4s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 
-.hero-stats{display:flex;gap:2.2rem;margin-bottom:1.8rem;flex-wrap:wrap}
-.stat{text-align:left}
-.stat-n{font-family:'EB Garamond',serif;font-size:2.1rem;font-weight:700;color:var(--teal);line-height:1;counter-reset:none}
-.stat-l{font-size:.65rem;color:rgba(255,255,255,.4);letter-spacing:.09em;text-transform:uppercase;margin-top:3px}
+.hero-name{font-family:'EB Garamond',serif;font-size:clamp(2.3rem,5.5vw,3.8rem);font-weight:700;color:var(--white);line-height:1.04;letter-spacing:-.025em;margin-bottom:.4rem}
+.hero-name .accent{color:var(--teal);position:relative}
+.hero-name .accent::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--teal),transparent);border-radius:2px}
+
+.hero-role{font-family:'EB Garamond',serif;font-size:1.15rem;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:1.2rem}
+.hero-desc{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.78;margin-bottom:1.8rem;max-width:510px}
+.hero-desc strong{color:rgba(255,255,255,.9);font-weight:600}
+
+/* Stats with counter animation */
+.hero-stats{display:flex;gap:2.4rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.stat{text-align:left;position:relative}
+.stat::after{content:'';position:absolute;bottom:-6px;left:0;width:24px;height:2px;background:var(--teal);border-radius:2px}
+.stat-n{font-family:'EB Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--teal);line-height:1;text-shadow:0 0 20px rgba(0,201,177,.3)}
+.stat-l{font-size:.63rem;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
 
 .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:7px;font-size:.78rem;font-weight:500;text-decoration:none;transition:all .22s;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.78);white-space:nowrap}
-.btn:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,201,177,.1)}
-.btn-primary{background:var(--teal);border-color:var(--teal);color:var(--navy)!important;font-weight:700}
-.btn-primary:hover{background:var(--teal2)!important;color:var(--navy)!important}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:8px;font-size:.78rem;font-weight:500;text-decoration:none;transition:all .22s;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.75)}
+.btn:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,201,177,.08);transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal2));border:none;color:var(--navy)!important;font-weight:700;box-shadow:0 4px 14px rgba(0,201,177,.3)}
+.btn-primary:hover{box-shadow:0 6px 20px rgba(0,201,177,.45)!important;transform:translateY(-2px)}
 
-/* scroll hint */
-.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.25);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;z-index:2}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.22);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;z-index:2}
 .scroll-arrow{animation:bob 2s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
 
-/* ── SECTIONS ── */
-section{padding:88px 2rem}
+/* ══ SECTIONS ══════════════════════════════════════════════════════ */
+section{padding:90px 2rem}
 .container{max-width:880px;margin:0 auto}
-.sec-label{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.45rem}
-.sec-title{font-family:'EB Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.3rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1.2rem}
+.sec-label{font-size:.67rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.45rem}
+.sec-title{font-family:'EB Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.4rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:1.2rem}
 .sec-rule{width:44px;height:3px;background:linear-gradient(90deg,var(--teal),transparent);border-radius:2px;margin-bottom:2.2rem}
 
-/* fade-in on scroll */
-.fade-up{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
+/* Scroll animations */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
 
-/* ── ABOUT ── */
+/* ══ ABOUT ══════════════════════════════════════════════════════════ */
 #about{background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:start}
 .about-text p{margin-bottom:1rem;line-height:1.8;color:var(--slate)}
-.about-card{background:var(--bg);border-radius:14px;padding:1.6rem;border:1px solid var(--light)}
-.about-card h4{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:1.1rem}
+.about-text strong{color:var(--navy)}
+.about-card{background:linear-gradient(135deg,#F8FAFC,#EFF4FC);border-radius:16px;padding:1.6rem;border:1px solid var(--light);box-shadow:var(--shadow-sm)}
+.about-card h4{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:1.1rem;display:flex;align-items:center;gap:8px}
 .info-row{display:flex;align-items:flex-start;gap:11px;margin-bottom:.75rem;font-size:.84rem}
-.info-icon{flex-shrink:0;margin-top:1px;font-size:1rem}
+.info-icon{flex-shrink:0;margin-top:1px}
 .info-text{color:var(--slate);line-height:1.5}
 .info-text a{color:var(--navy);text-decoration:none;transition:color .2s}
 .info-text a:hover{color:var(--teal)}
 
-/* social strip */
-.social-strip{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem}
-.social-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;border:1px solid var(--light);font-size:.75rem;font-weight:500;text-decoration:none;color:var(--navy);background:var(--white);transition:all .2s}
-.social-pill:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,201,177,.06)}
-.social-pill .sp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.social-strip{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.3rem}
+.social-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;border:1px solid var(--light);font-size:.74rem;font-weight:600;text-decoration:none;color:var(--navy);background:var(--white);transition:all .2s;box-shadow:var(--shadow-sm)}
+.social-pill:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,201,177,.15)}
+.sp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 
-/* ── RESEARCH ── */
+/* ══ RESEARCH ══════════════════════════════════════════════════════ */
 #research{background:var(--bg)}
-.exp-card{background:var(--white);border-radius:12px;padding:1.6rem;margin-bottom:1rem;border:1px solid var(--light);border-left:3px solid var(--teal);transition:box-shadow .2s,transform .2s}
-.exp-card:hover{box-shadow:0 4px 24px rgba(27,42,74,.08);transform:translateY(-2px)}
+.exp-card{background:var(--white);border-radius:14px;padding:1.7rem;margin-bottom:1rem;border:1px solid var(--light);border-left:4px solid var(--teal);transition:box-shadow .25s,transform .25s;box-shadow:var(--shadow-sm)}
+.exp-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
 .exp-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.3rem}
-.exp-title{font-family:'EB Garamond',serif;font-size:1.06rem;font-weight:600;color:var(--navy)}
-.exp-date{font-size:.73rem;color:var(--mid);white-space:nowrap;padding-top:2px}
-.exp-org{font-size:.8rem;color:var(--teal2);font-weight:500;margin-bottom:.8rem}
+.exp-title{font-family:'EB Garamond',serif;font-size:1.08rem;font-weight:600;color:var(--navy)}
+.exp-date{font-size:.72rem;color:var(--mid);white-space:nowrap;padding-top:2px;background:var(--bg);padding:3px 10px;border-radius:12px;font-weight:500}
+.exp-org{font-size:.8rem;color:var(--teal2);font-weight:600;margin-bottom:.85rem}
 .exp-list{list-style:none}
-.exp-list li{font-size:.86rem;color:var(--slate);padding:3px 0 3px 16px;position:relative;line-height:1.65}
-.exp-list li::before{content:"◦";position:absolute;left:0;color:var(--teal)}
+.exp-list li{font-size:.86rem;color:var(--slate);padding:4px 0 4px 18px;position:relative;line-height:1.65}
+.exp-list li::before{content:"◦";position:absolute;left:0;color:var(--teal);font-size:1.1rem;line-height:1.4}
+.exp-list li strong{color:var(--navy);font-weight:600}
+.contrib-tag{display:inline-flex;align-items:center;background:rgba(0,201,177,.1);color:var(--teal2);font-size:.7rem;font-weight:700;padding:1px 8px;border-radius:4px;margin-right:4px;border:1px solid rgba(0,201,177,.2)}
 
-/* ── SYSTEMS ── */
+/* ══ SYSTEMS ══════════════════════════════════════════════════════ */
 #systems{background:var(--white)}
 .sys-intro{color:var(--slate);line-height:1.8;margin-bottom:2.2rem;max-width:700px}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.gal-item{border-radius:12px;overflow:hidden;border:1px solid var(--light);background:#0d1117;position:relative;group:true}
-.gal-item img{width:100%;display:block;transition:transform .4s ease,filter .4s ease;filter:brightness(.95)}
-.gal-item:hover img{transform:scale(1.03);filter:brightness(1.05)}
-.gal-cap{padding:.7rem 1rem;font-size:.76rem;color:rgba(255,255,255,.65);background:#0d1117;font-weight:500;line-height:1.4}
+.gal-item{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0d1117;position:relative;box-shadow:var(--shadow)}
+.gal-item img{width:100%;display:block;transition:transform .45s ease,filter .45s ease;filter:brightness(.92) saturate(1.05)}
+.gal-item:hover img{transform:scale(1.04);filter:brightness(1.05) saturate(1.1)}
+.gal-header{display:flex;align-items:center;gap:8px;padding:.6rem .9rem;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(255,255,255,.06)}
+.sys-badge{font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:2px 9px;border-radius:4px}
+.sys-2d{background:rgba(0,201,177,.2);color:#5EEAD4;border:1px solid rgba(0,201,177,.3)}
+.sys-3d{background:rgba(139,92,246,.2);color:#C4B5FD;border:1px solid rgba(139,92,246,.3)}
+.sys-surge{background:rgba(239,68,68,.2);color:#FCA5A5;border:1px solid rgba(239,68,68,.3)}
+.gal-cap{padding:.65rem .9rem;font-size:.74rem;color:rgba(255,255,255,.55);background:#0d1117;line-height:1.4}
 .gal-wide{grid-column:1/-1}
-.sys-label{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:.5rem}
-.sys-2d{background:rgba(0,201,177,.15);color:var(--teal)}
-.sys-3d{background:rgba(139,92,246,.15);color:#A78BFA}
 
-/* ── PUBLICATIONS ── */
+/* RQ badges */
+.rq-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1.5rem}
+.rq-card{background:linear-gradient(135deg,var(--navy),var(--navy2));border:1px solid rgba(0,201,177,.2);border-radius:12px;padding:1rem 1.1rem;text-align:center}
+.rq-label{font-size:.65rem;font-weight:700;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.rq-result{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.85)}
+.rq-status{display:inline-block;background:rgba(0,201,177,.15);color:var(--teal);font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:.3rem;border:1px solid rgba(0,201,177,.25)}
+
+/* ══ PUBLICATIONS ══════════════════════════════════════════════════ */
 #publications{background:var(--bg)}
-.pub-legend{display:flex;gap:.75rem;margin-bottom:2rem;flex-wrap:wrap}
-.badge{font-size:.67rem;font-weight:700;letter-spacing:.06em;padding:3px 11px;border-radius:20px;text-transform:uppercase}
+.pub-legend{display:flex;gap:.7rem;margin-bottom:2rem;flex-wrap:wrap}
+.badge{font-size:.66rem;font-weight:700;letter-spacing:.06em;padding:4px 12px;border-radius:20px;text-transform:uppercase}
 .badge.pub{background:#DCFCE7;color:var(--pub)}
 .badge.ip{background:#DBEAFE;color:var(--ip)}
 .badge.rv{background:#FEF3C7;color:var(--rv)}
 .badge.pr{background:#EDE9FE;color:var(--pr)}
-.pub-group{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin:2rem 0 .8rem;padding-bottom:6px;border-bottom:1px solid var(--light)}
-.pub-card{padding:1.1rem 1.3rem;border-radius:10px;margin-bottom:.7rem;border:1px solid var(--light);transition:box-shadow .2s}
-.pub-card:hover{box-shadow:0 2px 16px rgba(27,42,74,.07)}
+.pub-group{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin:2rem 0 .85rem;padding-bottom:7px;border-bottom:1px solid var(--light);display:flex;align-items:center;gap:8px}
+.pub-group::before{content:'';flex:1;height:1px;background:var(--light)}
+.pub-card{padding:1.15rem 1.3rem;border-radius:12px;margin-bottom:.7rem;border:1px solid transparent;transition:box-shadow .2s,transform .2s}
+.pub-card:hover{box-shadow:var(--shadow);transform:translateX(3px)}
 .pub-card.pub{background:#F0FDF4;border-color:#BBF7D0}
 .pub-card.ip{background:#EFF6FF;border-color:#BFDBFE}
 .pub-card.rv{background:#FFFBEB;border-color:#FDE68A}
 .pub-card.pr{background:#F5F3FF;border-color:#DDD6FE}
-.pub-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;margin-bottom:.3rem}
-.pub-tag{font-size:.7rem;font-weight:700;color:var(--navy);white-space:nowrap;font-family:'Inter',sans-serif}
+.pub-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;margin-bottom:.35rem}
+.pub-tag{font-size:.7rem;font-weight:800;color:var(--navy);white-space:nowrap;background:rgba(27,42,74,.08);padding:2px 8px;border-radius:4px}
 .pub-title{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem}
 .pub-auth{font-size:.77rem;color:var(--mid);font-style:italic;margin-bottom:.22rem}
 .pub-venue{font-size:.77rem;color:var(--slate)}
 
-/* ── EDUCATION ── */
+/* ══ EDUCATION ══════════════════════════════════════════════════════ */
 #education{background:var(--white)}
-.edu-card{background:var(--bg);border-radius:12px;padding:1.6rem;margin-bottom:1rem;border:1px solid var(--light);transition:box-shadow .2s}
-.edu-card:hover{box-shadow:0 4px 20px rgba(27,42,74,.07)}
-.edu-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.35rem}
-.edu-uni{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--navy)}
-.edu-date{font-size:.73rem;color:var(--mid);white-space:nowrap}
-.edu-deg{font-size:.84rem;color:var(--teal2);font-weight:600;margin-bottom:.45rem}
-.edu-gpa{display:inline-flex;align-items:center;gap:6px;background:rgba(0,201,177,.1);border:1px solid rgba(0,201,177,.28);color:var(--teal2);font-size:.77rem;font-weight:700;padding:2px 11px;border-radius:5px;margin-bottom:.65rem}
+.edu-card{background:var(--bg);border-radius:14px;padding:1.7rem;margin-bottom:1rem;border:1px solid var(--light);transition:box-shadow .25s;position:relative;overflow:hidden}
+.edu-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--teal),#6366F1)}
+.edu-card:hover{box-shadow:var(--shadow)}
+.edu-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.4rem}
+.edu-uni{font-family:'EB Garamond',serif;font-size:1.12rem;font-weight:600;color:var(--navy)}
+.edu-date{font-size:.72rem;color:var(--mid);white-space:nowrap;background:var(--white);padding:3px 10px;border-radius:12px;font-weight:500;border:1px solid var(--light)}
+.edu-deg{font-size:.85rem;color:var(--teal2);font-weight:600;margin-bottom:.5rem}
+.edu-gpa{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(0,201,177,.12),rgba(0,168,150,.08));border:1px solid rgba(0,201,177,.25);color:var(--teal2);font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:6px;margin-bottom:.7rem}
 .edu-desc{font-size:.83rem;color:var(--slate);line-height:1.7}
+.edu-desc strong{color:var(--navy)}
 
-/* ── SKILLS ── */
+/* ══ SKILLS ══════════════════════════════════════════════════════════ */
 #skills{background:var(--bg)}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.skill-box{background:var(--white);border-radius:11px;padding:1.25rem;border:1px solid var(--light);transition:border-color .2s,box-shadow .2s}
-.skill-box:hover{border-color:rgba(0,201,177,.3);box-shadow:0 2px 12px rgba(0,201,177,.08)}
-.skill-box-title{font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal2);margin-bottom:.85rem}
+.skill-box{background:var(--white);border-radius:12px;padding:1.3rem;border:1px solid var(--light);transition:border-color .25s,box-shadow .25s,transform .25s}
+.skill-box:hover{border-color:rgba(0,201,177,.35);box-shadow:0 4px 16px rgba(0,201,177,.1);transform:translateY(-2px)}
+.skill-box-title{font-size:.69rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal2);margin-bottom:.9rem;display:flex;align-items:center;gap:6px}
+.skill-box-title::before{content:'';width:10px;height:2px;background:var(--teal);border-radius:1px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:.74rem;padding:4px 11px;border-radius:5px;font-weight:500}
-.tag.p{background:rgba(27,42,74,.07);color:var(--navy)}
-.tag.f{background:var(--light);color:var(--slate)}
+.tag{font-size:.74rem;padding:4px 11px;border-radius:6px;font-weight:500;transition:all .2s}
+.tag.p{background:rgba(27,42,74,.07);color:var(--navy);border:1px solid rgba(27,42,74,.1)}
+.tag.p:hover{background:rgba(0,201,177,.1);border-color:rgba(0,201,177,.3);color:var(--teal2)}
+.tag.f{background:var(--light);color:var(--slate);border:1px solid transparent}
 
-/* lang table */
-.lang-wrap{margin-top:2rem;border-radius:12px;overflow:hidden;border:1px solid var(--light)}
+.lang-wrap{margin-top:2rem;border-radius:14px;overflow:hidden;border:1px solid var(--light);box-shadow:var(--shadow-sm)}
 .lang-table{width:100%;border-collapse:collapse;font-size:.82rem}
-.lang-table th{padding:9px 14px;background:var(--navy);color:rgba(255,255,255,.65);font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-align:left}
+.lang-table th{padding:10px 14px;background:var(--navy);color:rgba(255,255,255,.65);font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:left}
+.lang-table th:first-child{border-radius:0}
 .lang-table td{padding:9px 14px;border-bottom:1px solid var(--light)}
 .lang-table tr:last-child td{border-bottom:none}
-.lang-table tr:nth-child(even) td{background:var(--bg)}
+.lang-table tr:nth-child(even) td{background:#F9FAFB}
 .cefr{font-weight:700;color:var(--teal2);text-align:center}
 
-/* ── AWARDS ── */
+/* ══ AWARDS ══════════════════════════════════════════════════════════ */
 #awards{background:var(--white)}
 .awards-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.award-card{background:var(--bg);border-radius:12px;padding:1.3rem;border:1px solid var(--light);border-top:3px solid var(--teal);transition:transform .2s,box-shadow .2s}
-.award-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(27,42,74,.08)}
+.award-card{background:var(--bg);border-radius:14px;padding:1.3rem;border:1px solid var(--light);border-top:3px solid var(--teal);transition:transform .25s,box-shadow .25s}
+.award-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.award-icon{font-size:1.4rem;margin-bottom:.5rem}
 .award-title{font-family:'EB Garamond',serif;font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.3rem}
-.award-org{font-size:.77rem;color:var(--teal2);font-weight:500;margin-bottom:.2rem}
-.award-date{font-size:.71rem;color:var(--mid);margin-bottom:.4rem}
+.award-org{font-size:.77rem;color:var(--teal2);font-weight:600;margin-bottom:.2rem}
+.award-date{font-size:.7rem;color:var(--mid);margin-bottom:.4rem;font-weight:500}
 .award-desc{font-size:.78rem;color:var(--slate);line-height:1.55}
 
-/* ── CONTACT ── */
-#contact{background:var(--navy);position:relative;overflow:hidden}
-#contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 100%,rgba(0,201,177,.07),transparent);pointer-events:none}
+/* ══ CONTACT ══════════════════════════════════════════════════════════ */
+#contact{background:var(--navy2);position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(0,201,177,.08),transparent);pointer-events:none}
 #contact .sec-title{color:var(--white)}
 #contact .sec-label{color:var(--teal)}
-.contact-desc{color:rgba(255,255,255,.6);margin-bottom:2.2rem;max-width:520px;line-height:1.75}
+.contact-desc{color:rgba(255,255,255,.58);margin-bottom:2.4rem;max-width:520px;line-height:1.78}
 .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
-.contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:1.1rem 1rem;text-decoration:none;transition:all .22s;display:flex;align-items:center;gap:12px;min-width:0}
-.contact-card:hover{background:rgba(0,201,177,.14);border-color:rgba(0,201,177,.4);transform:translateY(-2px)}
-.cc-icon{font-size:1.3rem;flex-shrink:0}
-.cc-label{font-size:.67rem;color:rgba(255,255,255,.4);font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:1px}
-.cc-val{font-size:.8rem;color:var(--white);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:1.1rem 1rem;text-decoration:none;transition:all .25s;display:flex;align-items:center;gap:13px;min-width:0;position:relative;overflow:hidden}
+.contact-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,201,177,.08),transparent);opacity:0;transition:opacity .25s}
+.contact-card:hover{border-color:rgba(0,201,177,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.contact-card:hover::before{opacity:1}
+.cc-icon{font-size:1.3rem;flex-shrink:0;position:relative;z-index:1}
+.cc-info{min-width:0;position:relative;z-index:1}
+.cc-label{font-size:.65rem;color:rgba(255,255,255,.38);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.cc-val{font-size:.78rem;color:var(--white);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-/* ── FOOTER ── */
-footer{background:#0d1117;color:rgba(255,255,255,.25);text-align:center;padding:1.6rem;font-size:.73rem}
-footer a{color:rgba(255,255,255,.35);text-decoration:none}
+/* ══ FOOTER ══════════════════════════════════════════════════════════ */
+footer{background:#080E1A;color:rgba(255,255,255,.22);text-align:center;padding:1.8rem;font-size:.73rem}
+footer a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--teal)}
 
-/* ── RESPONSIVE ── */
+/* ══ RESPONSIVE ══════════════════════════════════════════════════════ */
 @media(max-width:720px){
   nav{padding:0 1rem}
   .nav-links{gap:.7rem}
-  .nav-links a{font-size:.65rem}
+  .nav-links a{font-size:.62rem}
   section{padding:64px 1.2rem}
   .hero-inner{flex-direction:column;text-align:center;gap:2rem}
   .hero-text{display:flex;flex-direction:column;align-items:center}
@@ -247,7 +285,8 @@ footer a:hover{color:var(--teal)}
   .gal-wide{grid-column:auto}
   .contact-grid{grid-template-columns:1fr 1fr}
   .pub-top{flex-direction:column;gap:.35rem}
-  .exp-hd,.edu-hd{flex-direction:column;gap:.2rem}
+  .exp-hd,.edu-hd{flex-direction:column;gap:.3rem}
+  .rq-strip{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .contact-grid{grid-template-columns:1fr}
@@ -259,9 +298,9 @@ footer a:hover{color:var(--teal)}
 
 <div id="progress-bar"></div>
 
-<!-- NAV -->
+<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
 <nav>
-  <a href="#hero" class="nav-name">MD Mehedi Hasan</a>
+  <a href="#hero" class="nav-name">MD Mehedi <span>Hasan</span></a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#research">Research</a>
@@ -273,20 +312,26 @@ footer a:hover{color:var(--teal)}
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
 <section id="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="hero-grid"></div>
   <div class="rfid-rings">
     <div class="ring"></div><div class="ring"></div><div class="ring"></div>
   </div>
   <div class="hero-inner">
     <div class="photo-wrap">
+      <div class="photo-ring"></div>
+      <div class="photo-mask"></div>
       <img src="photo.jpg" alt="MD Mehedi Hasan" class="hero-photo">
     </div>
     <div class="hero-text">
-      <div class="hero-badge"><span class="dot"></span>Open to PhD Positions · 2026/2027</div>
-      <h1 class="hero-name">MD Mehedi <span>Hasan</span></h1>
+      <div class="hero-badge"><span class="badge-dot"></span>MEng Defended July 2026 · Available for PhD</div>
+      <h1 class="hero-name">MD Mehedi <span class="accent">Hasan</span></h1>
       <p class="hero-role">RFID &amp; Digital Twin Systems for Healthcare</p>
-      <p class="hero-desc">I build simulation-based tools that help resource-constrained hospitals make evidence-based decisions before investing in RFID infrastructure. My Master's work at Saga University validated dispatch performance across 50 stochastic runs — from quiet overnight periods to mass casualty surge.</p>
+      <p class="hero-desc">I build simulation-based tools that help resource-constrained hospitals make evidence-based decisions before investing in RFID infrastructure. My thesis — <strong>defended July 14, 2026</strong> — validated RFID-IoT dispatch across 50 stochastic runs with all three research questions answered and supported by real data from <strong>27 simulation log files</strong>.</p>
       <div class="hero-stats">
         <div class="stat"><div class="stat-n">99.7%</div><div class="stat-l">Alert Resolution</div></div>
         <div class="stat"><div class="stat-n">50</div><div class="stat-l">Simulation Runs</div></div>
@@ -304,25 +349,21 @@ footer a:hover{color:var(--teal)}
   <div class="scroll-hint"><span>Scroll</span><span class="scroll-arrow">↓</span></div>
 </section>
 
-<!-- ABOUT -->
+<!-- ══ ABOUT ══════════════════════════════════════════════════════════ -->
 <section id="about">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">Who I am</div>
-      <h2 class="sec-title">About</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="about-grid fade-up">
-      <div class="about-text">
-        <p>I am a Master of Engineering student at Saga University, Japan (GPA 3.9/4.0), studying Computer Science and Information Technology under Professor Eisuke Hanada. My research focuses on RFID-based Digital Twin simulation for emergency department resource management.</p>
-        <p>What drives my work is a practical problem: Bangladesh's public hospitals operate at 3–4 times capacity, yet deploying RFID without prior evidence is expensive and risky. I build simulation tools that generate that evidence cheaply, before any hardware is purchased.</p>
-        <p>I am actively seeking a fully funded PhD position in healthcare informatics, biomedical engineering, or IoT systems — primarily targeting Australia (RTP) and international programs. Thesis defense: <strong>July 14, 2026</strong>.</p>
+    <div class="reveal"><div class="sec-label">Who I am</div><h2 class="sec-title">About</h2><div class="sec-rule"></div></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I am a Master of Engineering graduate from Saga University, Japan (GPA 3.9/4.0), specialising in RFID-based Digital Twin simulation for emergency department resource management, under Professor Eisuke Hanada.</p>
+        <p>What drives my work is a practical problem: Bangladesh's public hospitals operate at 3–4× capacity, yet deploying RFID without prior evidence is expensive and risky. I build simulation tools that generate that evidence cheaply — before any hardware is purchased. My thesis was <strong>defended on July 14, 2026</strong>, with all three research questions fully supported by experimental data.</p>
+        <p>I am actively seeking a fully funded PhD position in healthcare informatics, biomedical engineering, or IoT systems — primarily targeting <strong>Australia (RTP)</strong> and international programs.</p>
       </div>
-      <div>
+      <div class="reveal reveal-delay-1">
         <div class="about-card">
-          <h4>Quick Info</h4>
+          <h4>📋 Quick Info</h4>
           <div class="info-row"><span class="info-icon">📍</span><span class="info-text">Saga University, Saga, Japan</span></div>
-          <div class="info-row"><span class="info-icon">🎓</span><span class="info-text">MEng Computer Science &amp; IT (Oct 2024 – Sep 2026)</span></div>
+          <div class="info-row"><span class="info-icon">🎓</span><span class="info-text">MEng Computer Science &amp; IT — Defended July 2026</span></div>
           <div class="info-row"><span class="info-icon">🔬</span><span class="info-text">RFID · Digital Twin · IoT · Agent-Based Simulation</span></div>
           <div class="info-row"><span class="info-icon">🌏</span><span class="info-text">From Bangladesh · Based in Japan</span></div>
           <div class="info-row"><span class="info-icon">✉️</span><span class="info-text"><a href="mailto:mehedihasan.baiu22@gmail.com">mehedihasan.baiu22@gmail.com</a></span></div>
@@ -331,169 +372,178 @@ footer a:hover{color:var(--teal)}
         <div class="social-strip">
           <a class="social-pill" href="https://www.linkedin.com/in/md-mehedi-hasan130500/" target="_blank"><span class="sp-dot" style="background:#0A66C2"></span>LinkedIn</a>
           <a class="social-pill" href="https://github.com/MHUdoy11" target="_blank"><span class="sp-dot" style="background:#333"></span>GitHub</a>
-          <a class="social-pill" href="https://scholar.google.com/citations?user=jHApCFEAAAAJ&hl=en" target="_blank"><span class="sp-dot" style="background:#4285F4"></span>Google Scholar</a>
+          <a class="social-pill" href="https://scholar.google.com/citations?user=jHApCFEAAAAJ&hl=en" target="_blank"><span class="sp-dot" style="background:#4285F4"></span>Scholar</a>
           <a class="social-pill" href="https://www.researchgate.net/profile/Md-Hasan-1132" target="_blank"><span class="sp-dot" style="background:#00BBAA"></span>ResearchGate</a>
-          <a class="social-pill" href="https://independent.academia.edu/MEHEDIHASAN5300" target="_blank"><span class="sp-dot" style="background:#41454A"></span>Academia.edu</a>
+          <a class="social-pill" href="https://independent.academia.edu/MEHEDIHASAN5300" target="_blank"><span class="sp-dot" style="background:#41454A"></span>Academia</a>
           <a class="social-pill" href="https://orcid.org/0009-0006-9162-0310" target="_blank"><span class="sp-dot" style="background:#A6CE39"></span>ORCID</a>
+          <a class="social-pill" href="https://mhudoy11.github.io" target="_blank"><span class="sp-dot" style="background:#1B2A4A"></span>Portfolio</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
+<!-- ══ RESEARCH ══════════════════════════════════════════════════════ -->
 <section id="research">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">What I do</div>
-      <h2 class="sec-title">Research Experience</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="exp-card fade-up">
+    <div class="reveal"><div class="sec-label">What I do</div><h2 class="sec-title">Research Experience</h2><div class="sec-rule"></div></div>
+    <div class="exp-card reveal">
       <div class="exp-hd">
         <div class="exp-title">Graduate Researcher — Hanada Laboratory</div>
-        <div class="exp-date">Oct 2024 – Present</div>
+        <div class="exp-date">Oct 2024 – Sep 2026</div>
       </div>
       <div class="exp-org">Saga University, Saga, Japan &nbsp;·&nbsp; Research Assistantship ¥19,800/month</div>
       <ul class="exp-list">
-        <li>Designed and implemented an RFID-based agent-simulation in MATLAB (V5.3); validated across 50 stochastic runs (39–762 patient arrivals) with 99.7% alert resolution and 83.0s mean response time across four census strata.</li>
-        <li>Built a Digital Twin visualization layer in Unity 3D (11 C# scripts) with NavMesh-based pathfinding; achieved 100% alert response coverage and 2.7× surge modulation accuracy vs. the MATLAB 2D baseline.</li>
-        <li>Developed and validated dynamic backup resource reallocation — 192% patient volume increase under surge absorbed with only a 0.2-second response-time difference.</li>
-        <li>Conducted cross-census robustness analysis resolving stochastic anomaly Run R13 through 12 targeted low-census simulation runs.</li>
+        <li><span class="contrib-tag">C1</span><strong>MATLAB Agent-Based Simulation:</strong> Operational RFID-based ED simulator with 3-class FSM agents, stochastic surge generation, nearest-nurse Euclidean dispatch, and CSV logging — validated across 19 MATLAB runs (39–762 patient arrivals), 99.7% alert resolution, 83.0s mean response time.</li>
+        <li><span class="contrib-tag">C2</span><strong>Adaptive Authority Engine:</strong> KPI-driven bang-bang staffing controller converging to a [20, 40] min wait-time deadband within 4–5 simulated days; zero incorrect decisions across 16 simulated days; full audit trail for clinical governance.</li>
+        <li><span class="contrib-tag">C3</span><strong>Unity 3D VR Transformation:</strong> 11 C# scripts, NavMesh pathfinding, RFID pulse animation, 3 role-based views (Admin / Nurse-Level / Equipment Manager); 100% alert response coverage and 2.7× surge modulation accuracy vs. MATLAB 2D baseline.</li>
+        <li><span class="contrib-tag">C4</span><strong>Integrated MATLAB→Unity Framework:</strong> Reproducible, free-software Digital Twin pipeline applicable to Bangladeshi and other LMIC hospital planning contexts. All three RQs answered from 27 simulation log files.</li>
       </ul>
     </div>
-    <div class="exp-card fade-up">
+    <div class="exp-card reveal reveal-delay-1">
       <div class="exp-hd">
         <div class="exp-title">Graduate Peer Mentor</div>
         <div class="exp-date">Apr – Sep 2026</div>
       </div>
       <div class="exp-org">Saga University, Japan &nbsp;·&nbsp; Faculty-remunerated avg. ¥18,000/month</div>
       <ul class="exp-list">
-        <li>Academic and settlement mentoring for a newly arrived international student — CS/engineering coursework plus practical Japan life guidance.</li>
+        <li>Academic and settlement mentoring for a newly arrived international student — CS/engineering coursework plus practical Japan life guidance (paperwork, banking, health insurance).</li>
       </ul>
     </div>
-    <div class="exp-card fade-up">
+    <div class="exp-card reveal reveal-delay-2">
       <div class="exp-hd">
         <div class="exp-title">Team Leader &amp; English Presentation Coach</div>
         <div class="exp-date">May–Jul 2025 &amp; 2026</div>
       </div>
       <div class="exp-org">Saga University × Chienkan High School Science English Outreach Programme</div>
       <ul class="exp-list">
-        <li>Led two teams of Japanese high school students from concept to final scientific presentation across two consecutive years.</li>
-        <li>2025: poster coaching; 2026: oral presentation restructuring and English delivery coaching.</li>
+        <li>Led two consecutive teams of Japanese high school students from project concept to final scientific presentation across two years.</li>
+        <li>2025: scientific poster coaching · 2026: oral presentation restructuring and English delivery coaching.</li>
       </ul>
     </div>
-    <div class="exp-card fade-up">
+    <div class="exp-card reveal reveal-delay-3">
       <div class="exp-hd">
         <div class="exp-title">International Research Presentation</div>
         <div class="exp-date">Feb 23–27, 2026</div>
       </div>
       <div class="exp-org">Saga University × Kasetsart University Cross-Cultural Collaboration Programme · Bangkok, Thailand</div>
       <ul class="exp-list">
-        <li>Presented RFID-based ED simulation research as part of a bilateral academic collaboration programme between Saga University and Kasetsart University, Thailand.</li>
+        <li>Presented RFID-based ED simulation research to an international academic audience as part of a bilateral collaboration programme between Saga University and Kasetsart University, Thailand.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- SYSTEMS -->
+<!-- ══ SYSTEMS ══════════════════════════════════════════════════════ -->
 <section id="systems">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">The work itself</div>
-      <h2 class="sec-title">Simulation Systems</h2>
-      <div class="sec-rule"></div>
-      <p class="sys-intro">Two integrated systems form the thesis: a MATLAB 2D agent-based simulation (BASE_SYSTEM V5.3 / ADMIN_SYSTEM V5.5) and a Unity 3D Digital Twin layer. Together they validate RFID-IoT nearest-nurse dispatch across 50 stochastic runs from 39 to 762 patient arrivals.</p>
-    </div>
-    <div class="gallery fade-up">
+    <div class="reveal"><div class="sec-label">The work itself</div><h2 class="sec-title">Simulation Systems</h2><div class="sec-rule"></div>
+    <p class="sys-intro">Two integrated systems form the thesis: a MATLAB 2D agent-based simulation (BASE_SYSTEM V5.3 / ADMIN_SYSTEM V5.5) and a Unity 3D Digital Twin layer. Together they validate RFID-IoT nearest-nurse dispatch across 50 stochastic runs from 39 to 762 patient arrivals.</p></div>
+    <div class="gallery reveal">
       <div class="gal-item">
-        <div style="padding:.5rem .8rem .2rem;background:#0d1117"><span class="sys-label sys-2d">MATLAB 2D</span></div>
+        <div class="gal-header"><span class="sys-badge sys-2d">MATLAB 2D</span><span style="font-size:.7rem;color:rgba(255,255,255,.4)">Normal Operation</span></div>
         <img src="sim_matlab_normal.png" alt="MATLAB RFID simulation normal operation">
-        <div class="gal-cap">Normal Operation · 4 Zones · 6 RFID Readers · 8 Nurses · 15 Beds</div>
+        <div class="gal-cap">4 Zones · 6 RFID Readers · 8 Nurses · 15 Beds · Status Normal</div>
       </div>
       <div class="gal-item">
-        <div style="padding:.5rem .8rem .2rem;background:#0d1117"><span class="sys-label sys-2d">MATLAB 2D</span></div>
+        <div class="gal-header"><span class="sys-badge sys-2d">MATLAB 2D</span><span style="font-size:.7rem;color:rgba(255,255,255,.4)">Active Patients</span></div>
         <img src="sim_matlab_active.png" alt="MATLAB RFID simulation active patients">
-        <div class="gal-cap">Active Patients · Nurse Dispatch Live · CSV Event Logging</div>
+        <div class="gal-cap">Active Patients Running · Nurse Dispatch Live · Real-Time CSV Logging</div>
       </div>
       <div class="gal-item gal-wide">
-        <div style="padding:.5rem .8rem .2rem;background:#0d1117"><span class="sys-label sys-2d">MATLAB 2D — EMERGENCY SURGE ACTIVE</span></div>
+        <div class="gal-header"><span class="sys-badge sys-surge">🔴 MATLAB 2D — EMERGENCY SURGE ACTIVE</span></div>
         <img src="sim_matlab_surge.png" alt="MATLAB RFID simulation emergency surge">
-        <div class="gal-cap">🔴 Emergency Surge · Backup Nurses Deployed · Emergency Beds Active · 38 Alerts Processed · All Beds Occupied</div>
+        <div class="gal-cap">Backup Nurses Deployed · Emergency Beds Active · 38 Alerts Processed · All 20/20 Beds Occupied · 99.7% Resolution</div>
       </div>
       <div class="gal-item">
-        <div style="padding:.5rem .8rem .2rem;background:#0d1117"><span class="sys-label sys-3d">Unity 3D</span></div>
+        <div class="gal-header"><span class="sys-badge sys-3d">Unity 3D</span><span style="font-size:.7rem;color:rgba(255,255,255,.4)">Digital Twin Live</span></div>
         <img src="sim_unity_3d.png" alt="Unity 3D Digital Twin hospital ward">
-        <div class="gal-cap">Digital Twin Live View · 4 Colour-Coded Zones · Agent Navigation</div>
+        <div class="gal-cap">4 Colour-Coded Zones · Agent Navigation · RFID Pulse Visualization</div>
       </div>
       <div class="gal-item">
-        <div style="padding:.5rem .8rem .2rem;background:#0d1117"><span class="sys-label sys-3d">Unity 3D</span></div>
-        <img src="sim_unity_scene.png" alt="Unity 3D scene editor C# scripts">
-        <div class="gal-cap">Scene Editor · 11 C# Manager Scripts · NavMesh · BedGroup + NurseManager</div>
+        <div class="gal-header"><span class="sys-badge sys-3d">Unity 3D</span><span style="font-size:.7rem;color:rgba(255,255,255,.4)">Scene Editor</span></div>
+        <img src="sim_unity_scene.png" alt="Unity 3D scene editor">
+        <div class="gal-cap">11 C# Manager Scripts · NavMesh · BedGroup + NurseManager + SurgeManager Architecture</div>
+      </div>
+    </div>
+    <!-- RQ Summary Strip -->
+    <div class="rq-strip reveal">
+      <div class="rq-card">
+        <div class="rq-label">RQ1 — Visualization</div>
+        <div class="rq-result">Unity 3D superior across 5 dimensions vs. MATLAB 2D dashboard</div>
+        <div class="rq-status">✓ SUPPORTED</div>
+      </div>
+      <div class="rq-card">
+        <div class="rq-label">RQ2 — Adaptive Authority</div>
+        <div class="rq-result">Converges staffing to deadband in 4–5 days · zero incorrect decisions / 16 days</div>
+        <div class="rq-status">✓ SUPPORTED</div>
+      </div>
+      <div class="rq-card">
+        <div class="rq-label">RQ3 — RFID Localization</div>
+        <div class="rq-result">100% zone-assignment accuracy · 6 readers · full 20×15m coverage</div>
+        <div class="rq-status">✓ SUPPORTED</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
+<!-- ══ PUBLICATIONS ══════════════════════════════════════════════════ -->
 <section id="publications">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">My work</div>
-      <h2 class="sec-title">Publications</h2>
-      <div class="sec-rule"></div>
-      <div class="pub-legend">
-        <span class="badge pub">Published</span>
-        <span class="badge ip">Accepted / In Press</span>
-        <span class="badge rv">Under Review</span>
-        <span class="badge pr">In Preparation</span>
-      </div>
-    </div>
-    <div class="pub-group fade-up">First-Author Papers</div>
-    <div class="pub-card ip fade-up">
+    <div class="reveal"><div class="sec-label">My work</div><h2 class="sec-title">Publications</h2><div class="sec-rule"></div>
+    <div class="pub-legend">
+      <span class="badge pub">Published</span>
+      <span class="badge ip">Accepted / In Press</span>
+      <span class="badge rv">Under Review</span>
+      <span class="badge pr">In Preparation</span>
+    </div></div>
+
+    <div class="pub-group reveal">First-Author Papers</div>
+    <div class="pub-card ip reveal">
       <div class="pub-top"><span class="pub-tag">[C.1]</span><span class="badge ip">Accepted / In Press</span></div>
       <div class="pub-title">Improving Patient Care in the Emergency Wards of Bangladesh Through an RFID-Based Web Simulation</div>
       <div class="pub-auth">Hasan MD Mehedi, Hossain Shakil, Eisuke Hanada</div>
       <div class="pub-venue">20th EAI Int'l Conference on Body Area Networks (EAI BodyNets 2025), Dec 2025</div>
     </div>
-    <div class="pub-card pub fade-up">
+    <div class="pub-card pub reveal">
       <div class="pub-top"><span class="pub-tag">[C.2]</span><span class="badge pub">Published</span></div>
       <div class="pub-title">Digital Twin-Based Emergency Resource Localization System for Crowded Hospital Wards Using RFID and VR Visualization</div>
       <div class="pub-auth">Hasan MD Mehedi, Hossain Shakil, Eisuke Hanada</div>
       <div class="pub-venue">IEICE General Conference 2026 — Session B-19, Kyushu Sangyo University, Mar 2026</div>
     </div>
-    <div class="pub-card rv fade-up">
+    <div class="pub-card rv reveal">
       <div class="pub-top"><span class="pub-tag">[C.3]</span><span class="badge rv">Under Review</span></div>
       <div class="pub-title">Real-Time RFID Tracking Simulation for Hospital Resource Management: A 3D Unity Implementation with Dynamic Surge Response and VR Readiness</div>
       <div class="pub-auth">Hasan MD Mehedi, Eisuke Hanada</div>
       <div class="pub-venue">ISMICT 2026 — 20th Int'l Symposium on Medical Information and Communication Technology</div>
     </div>
-    <div class="pub-card rv fade-up">
+    <div class="pub-card rv reveal">
       <div class="pub-top"><span class="pub-tag">[C.4]</span><span class="badge rv">Under Review</span></div>
       <div class="pub-title">Cross-Census Stability and Surge Resilience of RFID-IoT Dispatch in a Bangladeshi Emergency Department Simulation</div>
       <div class="pub-auth">Hasan MD Mehedi, Eisuke Hanada</div>
       <div class="pub-venue">EAI HealthyAIoT 2026 — 11th EAI Int'l Conference on AIoT Healthcare Systems, Guangzhou, China</div>
     </div>
-    <div class="pub-card pr fade-up">
+    <div class="pub-card pr reveal">
       <div class="pub-top"><span class="pub-tag">[S.1]</span><span class="badge pr">In Preparation</span></div>
       <div class="pub-title">An RFID-Based Dynamic Resource Management Simulation for Smart Hospital Wards: A Bangladesh Healthcare Perspective</div>
       <div class="pub-auth">Hasan MD Mehedi, Eisuke Hanada</div>
       <div class="pub-venue">Journal — Extended from EAI BodyNets 2025 (target submission July 2026)</div>
     </div>
-    <div class="pub-group fade-up">Co-Authored Contributions</div>
-    <div class="pub-card rv fade-up">
+
+    <div class="pub-group reveal">Co-Authored Contributions</div>
+    <div class="pub-card rv reveal">
       <div class="pub-top"><span class="pub-tag">[C.5]</span><span class="badge rv">Under Review</span></div>
       <div class="pub-title">Transfer Learning-Based Renal Ultrasound Classification for CAKUT Screening: A Preliminary Study Using ResNet-50</div>
       <div class="pub-auth">Ahmed Alif, Hasan MD Mehedi, Eisuke Hanada</div>
       <div class="pub-venue">ISMICT 2026 — 20th Int'l Symposium on Medical Information and Communication Technology</div>
     </div>
-    <div class="pub-card rv fade-up">
+    <div class="pub-card rv reveal">
       <div class="pub-top"><span class="pub-tag">[C.6]</span><span class="badge rv">Under Review</span></div>
       <div class="pub-title">A Lightweight AIoT Framework for CAKUT Screening in Resource-Limited Community Clinics: System Design and Edge Deployment Feasibility</div>
       <div class="pub-auth">Ahmed Alif, Hasan MD Mehedi, Eisuke Hanada</div>
       <div class="pub-venue">EAI HealthyAIoT 2026 — 11th EAI Int'l Conference on AIoT Healthcare Systems, Guangzhou, China</div>
     </div>
-    <div class="pub-card rv fade-up">
+    <div class="pub-card rv reveal">
       <div class="pub-top"><span class="pub-tag">[C.7]</span><span class="badge rv">Under Review</span></div>
       <div class="pub-title">Traffic-Aware Routing and Real-Time Clinical Synchronisation for Mobile Emergency Medical Services in Resource-Constrained Environments</div>
       <div class="pub-auth">Das Bishal, Hasan MD Mehedi, Eisuke Hanada</div>
@@ -502,15 +552,11 @@ footer a:hover{color:var(--teal)}
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- ══ EDUCATION ══════════════════════════════════════════════════════ -->
 <section id="education">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">Background</div>
-      <h2 class="sec-title">Education</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="edu-card fade-up">
+    <div class="reveal"><div class="sec-label">Background</div><h2 class="sec-title">Education</h2><div class="sec-rule"></div></div>
+    <div class="edu-card reveal">
       <div class="edu-hd">
         <div class="edu-uni">Saga University</div>
         <div class="edu-date">Oct 2024 – Sep 2026 · Saga, Japan</div>
@@ -518,12 +564,12 @@ footer a:hover{color:var(--teal)}
       <div class="edu-deg">Master of Engineering — Computer Science &amp; Information Technology</div>
       <div class="edu-gpa">⭐ GPA: 3.9 / 4.0 &nbsp;(Final semester: 4.0 / 4.0)</div>
       <div class="edu-desc">
-        <strong>Supervisor:</strong> Professor Eisuke Hanada<br>
-        <strong>Thesis (submitted; defense July 14, 2026):</strong> A Digital Twin Approach to Emergency Department Resource Management<br><br>
-        Two-stage Digital Twin framework combining MATLAB agent-based simulation with Unity 3D VR visualization for RFID-based localization and resource tracking. Evaluated across 50 stochastic runs spanning four census strata — 99.7% alert resolution, 83-second mean response time.
+        <strong>Supervisor:</strong> Professor Eisuke Hanada &nbsp;·&nbsp; TOEFL scheduled August 2026 (target 85+)<br>
+        <strong>Thesis (defended July 14, 2026):</strong> A Digital Twin Approach to Emergency Department Resource Management<br><br>
+        Two-stage Digital Twin framework (C1–C4) combining MATLAB agent-based simulation with Unity 3D VR visualization for RFID-based localization and resource tracking. All three RQs answered from 27 simulation log files: 100% zone-assignment accuracy (RQ3), Adaptive Authority Engine converging staffing within 4–5 days (RQ2), Unity 3D demonstrating superior situational awareness across 5 dimensions (RQ1).
       </div>
     </div>
-    <div class="edu-card fade-up">
+    <div class="edu-card reveal reveal-delay-1">
       <div class="edu-hd">
         <div class="edu-uni">Bangladesh Army International University of Science &amp; Technology (BAIUST)</div>
         <div class="edu-date">2018 – 2022 · Cumilla, Bangladesh</div>
@@ -537,173 +583,121 @@ footer a:hover{color:var(--teal)}
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ══ SKILLS ══════════════════════════════════════════════════════════ -->
 <section id="skills">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">Capabilities</div>
-      <h2 class="sec-title">Skills</h2>
-      <div class="sec-rule"></div>
+    <div class="reveal"><div class="sec-label">Capabilities</div><h2 class="sec-title">Skills</h2><div class="sec-rule"></div></div>
+    <div class="skills-grid reveal">
+      <div class="skill-box"><div class="skill-box-title">Simulation &amp; Modeling</div><div class="tags"><span class="tag p">MATLAB V5.3</span><span class="tag p">Unity 3D</span><span class="tag p">Agent-Based Sim</span><span class="tag p">Monte Carlo</span><span class="tag p">Digital Twin</span></div></div>
+      <div class="skill-box"><div class="skill-box-title">RFID &amp; IoT</div><div class="tags"><span class="tag p">Passive UHF RFID</span><span class="tag p">Active RFID</span><span class="tag p">Chipless RFID</span><span class="tag p">RSSI Trilateration</span><span class="tag p">LANDMARC</span></div></div>
+      <div class="skill-box"><div class="skill-box-title">Programming</div><div class="tags"><span class="tag p">MATLAB Scripting</span><span class="tag p">C# (Unity)</span><span class="tag p">Python</span><span class="tag f">HTML/CSS</span><span class="tag f">JavaScript</span></div></div>
+      <div class="skill-box"><div class="skill-box-title">3D &amp; Visualization</div><div class="tags"><span class="tag p">NavMesh Pathfinding</span><span class="tag p">RFID Pulse Animation</span><span class="tag p">VR Architecture</span><span class="tag f">Adobe PS/AI/AE</span></div></div>
+      <div class="skill-box"><div class="skill-box-title">Research &amp; Writing</div><div class="tags"><span class="tag p">Academic Writing</span><span class="tag p">LaTeX</span><span class="tag p">Literature Review</span><span class="tag f">Git/GitHub</span><span class="tag f">Arduino</span></div></div>
+      <div class="skill-box"><div class="skill-box-title">Data &amp; Analysis</div><div class="tags"><span class="tag p">Statistical Analysis</span><span class="tag p">CSV Pipeline</span><span class="tag f">Edge-Cloud Architecture</span></div></div>
     </div>
-    <div class="skills-grid fade-up">
-      <div class="skill-box">
-        <div class="skill-box-title">Simulation &amp; Modeling</div>
-        <div class="tags"><span class="tag p">MATLAB V5.3</span><span class="tag p">Unity 3D</span><span class="tag p">Agent-Based Sim</span><span class="tag p">Monte Carlo</span><span class="tag p">Digital Twin</span></div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-box-title">RFID &amp; IoT</div>
-        <div class="tags"><span class="tag p">Passive UHF RFID</span><span class="tag p">Active RFID</span><span class="tag p">Chipless RFID</span><span class="tag p">RSSI Trilateration</span><span class="tag p">LANDMARC</span></div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-box-title">Programming</div>
-        <div class="tags"><span class="tag p">MATLAB Scripting</span><span class="tag p">C# (Unity)</span><span class="tag p">Python</span><span class="tag f">HTML/CSS</span><span class="tag f">JavaScript</span></div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-box-title">3D &amp; Visualization</div>
-        <div class="tags"><span class="tag p">NavMesh Pathfinding</span><span class="tag p">RFID Pulse Animation</span><span class="tag p">VR Architecture</span><span class="tag f">Adobe PS/AI/AE</span></div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-box-title">Research &amp; Writing</div>
-        <div class="tags"><span class="tag p">Academic Writing</span><span class="tag p">LaTeX</span><span class="tag p">Literature Review</span><span class="tag f">Git / GitHub</span><span class="tag f">Arduino</span></div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-box-title">Data &amp; Analysis</div>
-        <div class="tags"><span class="tag p">Statistical Analysis</span><span class="tag p">CSV Pipeline</span><span class="tag f">Edge-Cloud Architecture</span></div>
-      </div>
-    </div>
-    <div class="lang-wrap fade-up">
+    <div class="lang-wrap reveal">
       <table class="lang-table">
         <thead><tr><th>Language</th><th>Listen</th><th>Read</th><th>Speak</th><th>Write</th><th>Notes</th></tr></thead>
         <tbody>
           <tr><td><strong>Bengali</strong></td><td class="cefr">C2</td><td class="cefr">C2</td><td class="cefr">C2</td><td class="cefr">C2</td><td>Native</td></tr>
-          <tr><td><strong>English</strong></td><td class="cefr">B2</td><td class="cefr">C1</td><td class="cefr">B2</td><td class="cefr">B2</td><td>Professional — TOEFL Aug 2026</td></tr>
+          <tr><td><strong>English</strong></td><td class="cefr">B2</td><td class="cefr">C1</td><td class="cefr">B2</td><td class="cefr">B2</td><td>Professional — TOEFL scheduled Aug 2026 (target 85+)</td></tr>
           <tr><td><strong>Japanese</strong></td><td class="cefr">A2</td><td class="cefr">A2</td><td class="cefr">A2</td><td class="cefr">A1</td><td>Daily conversation (approx. JLPT N4)</td></tr>
           <tr><td><strong>Hindi/Urdu</strong></td><td class="cefr">B1</td><td class="cefr">A1</td><td class="cefr">B1</td><td class="cefr">A1</td><td>Conversational; limited reading/writing</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size:.71rem;color:var(--mid);margin-top:8px">CEFR: A1/A2 Basic · B1/B2 Independent · C1/C2 Proficient &nbsp;|&nbsp; JLPT: N5 (beginner) → N1 (advanced)</p>
+    <p style="font-size:.71rem;color:var(--mid);margin-top:8px" class="reveal">CEFR: A1/A2 Basic · B1/B2 Independent · C1/C2 Proficient &nbsp;|&nbsp; JLPT: N5 (beginner) → N1 (advanced)</p>
   </div>
 </section>
 
-<!-- AWARDS -->
+<!-- ══ AWARDS ══════════════════════════════════════════════════════════ -->
 <section id="awards">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">Recognition</div>
-      <h2 class="sec-title">Honors, Scholarships &amp; Awards</h2>
-      <div class="sec-rule"></div>
-    </div>
-    <div class="awards-grid fade-up">
-      <div class="award-card">
-        <div class="award-title">MEXT Honors Scholarship</div>
-        <div class="award-org">Japanese Government (MEXT)</div>
-        <div class="award-date">Oct 2024 – Mar 2025</div>
-        <div class="award-desc">¥48,000/month · Competitive national scholarship for international graduate students in Japan.</div>
-      </div>
-      <div class="award-card">
-        <div class="award-title">Saga City Scholarship</div>
-        <div class="award-org">Saga City Government, Japan</div>
-        <div class="award-date">May 2025 – Mar 2026</div>
-        <div class="award-desc">¥20,000/month · Competitive municipal scholarship recognising academic achievement.</div>
-      </div>
-      <div class="award-card">
-        <div class="award-title">Full Tuition Exemption</div>
-        <div class="award-org">Saga University, Japan</div>
-        <div class="award-date">Oct 2024 – Sep 2026</div>
-        <div class="award-desc">National university tuition fully waived (~¥535,800/year) for the full MEng programme.</div>
-      </div>
-      <div class="award-card">
-        <div class="award-title">Candidate for Academic Incentive Award</div>
-        <div class="award-org">IEICE General Conference 2026 — Session B-19-01</div>
-        <div class="award-date">Mar 2026</div>
-        <div class="award-desc">Nominated for excellence for the Digital Twin-Based Emergency Resource Localization paper, Kyushu Sangyo University.</div>
-      </div>
-      <div class="award-card">
-        <div class="award-title">Perfect Semester GPA — 4.0 / 4.0</div>
-        <div class="award-org">Saga University</div>
-        <div class="award-date">2025 Fall Semester</div>
-        <div class="award-desc">Perfect GPA in the final completed semester of the MEng programme.</div>
-      </div>
+    <div class="reveal"><div class="sec-label">Recognition</div><h2 class="sec-title">Honors, Scholarships &amp; Awards</h2><div class="sec-rule"></div></div>
+    <div class="awards-grid reveal">
+      <div class="award-card"><div class="award-icon">🏛️</div><div class="award-title">MEXT Honors Scholarship</div><div class="award-org">Japanese Government (MEXT)</div><div class="award-date">Oct 2024 – Mar 2025</div><div class="award-desc">¥48,000/month · Competitive national scholarship for international graduate students in Japan.</div></div>
+      <div class="award-card"><div class="award-icon">🏙️</div><div class="award-title">Saga City Scholarship</div><div class="award-org">Saga City Government, Japan</div><div class="award-date">May 2025 – Mar 2026</div><div class="award-desc">¥20,000/month · Competitive municipal scholarship recognising academic achievement.</div></div>
+      <div class="award-card"><div class="award-icon">🎓</div><div class="award-title">Full Tuition Exemption</div><div class="award-org">Saga University, Japan</div><div class="award-date">Oct 2024 – Sep 2026</div><div class="award-desc">National university tuition fully waived (~¥535,800/year) for the full MEng programme.</div></div>
+      <div class="award-card"><div class="award-icon">🏆</div><div class="award-title">Candidate for Academic Incentive Award</div><div class="award-org">IEICE General Conference 2026 — Session B-19-01</div><div class="award-date">Mar 2026 · Kyushu Sangyo University</div><div class="award-desc">Nominated for excellence in research on Digital Twin-Based Emergency Resource Localization with RFID and VR Visualization.</div></div>
+      <div class="award-card"><div class="award-icon">⭐</div><div class="award-title">Perfect Semester GPA — 4.0 / 4.0</div><div class="award-org">Saga University</div><div class="award-date">2025 Fall Semester</div><div class="award-desc">Perfect GPA in the final completed semester of the MEng programme.</div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ══ CONTACT ══════════════════════════════════════════════════════════ -->
 <section id="contact">
   <div class="container">
-    <div class="fade-up">
-      <div class="sec-label">Get in touch</div>
-      <h2 class="sec-title">Contact</h2>
-      <div class="sec-rule"></div>
-      <p class="contact-desc">I am actively seeking fully funded PhD positions in healthcare informatics, IoT systems, or biomedical engineering. Please reach out if you have opportunities or would like to discuss research collaboration.</p>
-    </div>
-    <div class="contact-grid fade-up">
-      <a class="contact-card" href="mailto:mehedihasan.baiu22@gmail.com">
-        <span class="cc-icon">✉️</span>
-        <div style="min-width:0"><div class="cc-label">Email</div><div class="cc-val" style="font-size:.73rem">mehedihasan.baiu22@gmail.com</div></div>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/md-mehedi-hasan130500/" target="_blank">
-        <span class="cc-icon">💼</span>
-        <div style="min-width:0"><div class="cc-label">LinkedIn</div><div class="cc-val">md-mehedi-hasan130500</div></div>
-      </a>
-      <a class="contact-card" href="https://scholar.google.com/citations?user=jHApCFEAAAAJ&hl=en" target="_blank">
-        <span class="cc-icon">📚</span>
-        <div style="min-width:0"><div class="cc-label">Google Scholar</div><div class="cc-val">View Publications</div></div>
-      </a>
-      <a class="contact-card" href="https://orcid.org/0009-0006-9162-0310" target="_blank">
-        <span class="cc-icon">🔬</span>
-        <div style="min-width:0"><div class="cc-label">ORCID</div><div class="cc-val">0009-0006-9162-0310</div></div>
-      </a>
-      <a class="contact-card" href="https://github.com/MHUdoy11" target="_blank">
-        <span class="cc-icon">💻</span>
-        <div style="min-width:0"><div class="cc-label">GitHub</div><div class="cc-val">MHUdoy11</div></div>
-      </a>
-      <a class="contact-card" href="https://www.researchgate.net/profile/Md-Hasan-1132" target="_blank">
-        <span class="cc-icon">🧪</span>
-        <div style="min-width:0"><div class="cc-label">ResearchGate</div><div class="cc-val">Md-Hasan-1132</div></div>
-      </a>
-      <a class="contact-card" href="https://independent.academia.edu/MEHEDIHASAN5300" target="_blank">
-        <span class="cc-icon">🎓</span>
-        <div style="min-width:0"><div class="cc-label">Academia.edu</div><div class="cc-val">MEHEDIHASAN5300</div></div>
-      </a>
-      <a class="contact-card" href="https://www.researchgate.net/profile/Md-Hasan-1132" target="_blank">
-        <span class="cc-icon">🌐</span>
-        <div style="min-width:0"><div class="cc-label">Portfolio</div><div class="cc-val">mhudoy11.github.io</div></div>
-      </a>
+    <div class="reveal"><div class="sec-label">Get in touch</div><h2 class="sec-title">Contact</h2><div class="sec-rule"></div>
+    <p class="contact-desc">I am actively seeking fully funded PhD positions in healthcare informatics, IoT systems, or biomedical engineering. Please reach out if you have opportunities or would like to discuss research collaboration.</p></div>
+    <div class="contact-grid reveal">
+      <a class="contact-card" href="mailto:mehedihasan.baiu22@gmail.com"><span class="cc-icon">✉️</span><div class="cc-info"><div class="cc-label">Email</div><div class="cc-val" style="font-size:.72rem">mehedihasan.baiu22@gmail.com</div></div></a>
+      <a class="contact-card" href="https://www.linkedin.com/in/md-mehedi-hasan130500/" target="_blank"><span class="cc-icon">💼</span><div class="cc-info"><div class="cc-label">LinkedIn</div><div class="cc-val">md-mehedi-hasan130500</div></div></a>
+      <a class="contact-card" href="https://scholar.google.com/citations?user=jHApCFEAAAAJ&hl=en" target="_blank"><span class="cc-icon">📚</span><div class="cc-info"><div class="cc-label">Google Scholar</div><div class="cc-val">View Publications</div></div></a>
+      <a class="contact-card" href="https://orcid.org/0009-0006-9162-0310" target="_blank"><span class="cc-icon">🔬</span><div class="cc-info"><div class="cc-label">ORCID</div><div class="cc-val">0009-0006-9162-0310</div></div></a>
+      <a class="contact-card" href="https://github.com/MHUdoy11" target="_blank"><span class="cc-icon">💻</span><div class="cc-info"><div class="cc-label">GitHub</div><div class="cc-val">MHUdoy11</div></div></a>
+      <a class="contact-card" href="https://www.researchgate.net/profile/Md-Hasan-1132" target="_blank"><span class="cc-icon">🧪</span><div class="cc-info"><div class="cc-label">ResearchGate</div><div class="cc-val">Md-Hasan-1132</div></div></a>
+      <a class="contact-card" href="https://independent.academia.edu/MEHEDIHASAN5300" target="_blank"><span class="cc-icon">🎓</span><div class="cc-info"><div class="cc-label">Academia.edu</div><div class="cc-val">MEHEDIHASAN5300</div></div></a>
+      <a class="contact-card" href="https://mhudoy11.github.io" target="_blank"><span class="cc-icon">🌐</span><div class="cc-info"><div class="cc-label">Portfolio</div><div class="cc-val">mhudoy11.github.io</div></div></a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>MD Mehedi Hasan · Graduate Researcher · Saga University, Japan · 2026 &nbsp;·&nbsp; <a href="cv.pdf" download>Download CV</a> &nbsp;·&nbsp; <a href="https://github.com/MHUdoy11" target="_blank">GitHub</a></p>
+  <p>MD Mehedi Hasan · MEng Graduate · Saga University, Japan · 2026 &nbsp;·&nbsp; <a href="cv.pdf" download>Download CV</a> &nbsp;·&nbsp; <a href="https://github.com/MHUdoy11" target="_blank">GitHub</a> &nbsp;·&nbsp; <a href="https://mhudoy11.github.io">mhudoy11.github.io</a></p>
 </footer>
 
 <script>
-// scroll progress bar
-const bar = document.getElementById('progress-bar');
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-  bar.style.width = pct + '%';
-});
+// ── Scroll progress
+const bar=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
 
-// fade-up on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+// ── Reveal on scroll
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal,.reveal-left').forEach(el=>observer.observe(el));
 
-// active nav link highlight
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cv)');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--teal)' : '';
+// ── Active nav highlight
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a:not(.nav-cv)');
+const onScroll=()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id});
+  navLinks.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+cur;
+    a.classList.toggle('active',active);
   });
-});
+};
+window.addEventListener('scroll',onScroll,{passive:true});
+
+// ── Animated stat counters
+const animateCounters=()=>{
+  document.querySelectorAll('.stat-n').forEach(el=>{
+    const text=el.textContent;
+    const num=parseFloat(text.replace(/[^0-9.]/g,''));
+    const suffix=text.replace(/[0-9.]/g,'');
+    if(isNaN(num))return;
+    const duration=1600;
+    const start=performance.now();
+    const update=now=>{
+      const p=Math.min((now-start)/duration,1);
+      const ease=1-Math.pow(1-p,3);
+      const cur=num<10?Math.round(ease*num*10)/10:Math.round(ease*num);
+      el.textContent=cur+suffix;
+      if(p<1)requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  });
+};
+// Trigger counters when hero is visible
+const heroObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){animateCounters();heroObs.disconnect();}
+},{threshold:0.3});
+const heroEl=document.getElementById('hero');
+if(heroEl)heroObs.observe(heroEl);
 </script>
 </body>
 </html>
